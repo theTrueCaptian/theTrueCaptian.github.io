@@ -1,0 +1,349 @@
+<style>
+   /*.resume-row {
+      width:90%;
+   }*/
+   .about{
+      font-size: 14px;
+   }
+   .projects{
+      display:grid;
+      grid-template-columns: 50% 50%;
+      width:100%;
+      grid-column-gap: 30px;
+   }
+   .projects>.content-box{
+      display:grid;
+      grid-template-columns: 40% auto auto;
+      /*grid-column-gap: 10px;*/
+      grid-template-rows: min-content min-content auto;
+      grid-template-areas: 
+         "thumbnail header header"
+         "thumbnail date date"
+         "thumbnail links links";
+         /*"thumbnail location location"
+         "thumbnail description description"
+      ;*/
+
+      font-size: 14px;
+
+      /*border-bottom: 2px solid whitesmoke;*/
+      margin-top:10px;
+      margin-bottom:10px;
+      margin-right: 10px;
+   }
+   .projects>.content-box .header{
+      grid-area:header;
+      font-size: 16px
+   }
+   .projects>.content-box .date{
+      grid-area:date;
+      text-align:left;
+
+   }
+   .projects>.content-box .location{
+      grid-area:location;
+      display: none;
+   }
+   .projects>.content-box .description{
+      grid-area:description;
+      display: none;
+   }
+   .projects>.content-box .thumbnail{
+      grid-area:thumbnail;
+   }
+   .projects>.content-box .links{
+      grid-area:links;
+   }
+   .projects>.content-box .thumbnail img {
+      border: 3pt whitesmoke solid;
+      border-radius: 0.5pt;
+   }
+</style>
+
+<div class="resume-row about">
+    <div class="resume-col-header">About me</div>
+    <div class="resume-col-content content-text" style="color:black">
+        <p>Hello! I am interested in human-in-the-loop systems, example-driven program synthesis, and data visualizations. My favorite programming language is Java. </p>
+    </div>
+</div>
+<div class="resume-row">
+    <div class="resume-col-header">Coding Projects</div>
+    <div class="resume-col-content projects">
+
+      <!--<div class="content-box">
+         <div class="header">WhyFlow: Interactively Explaining Errors in Data Extraction Pipelines</div> 
+         <div class="date">Fall 2017 to 2020</div>
+         <div class="thumbnail">
+             <img src="img/whyflow.png" ></img>
+         </div>
+      </div>-->
+      <div class="content-box">
+         <div class="header">Texture: Structure Identification Over Print and PDF Documents</div> 
+         <div class="date">Fall 2014 to 2019</div>
+         <div class="thumbnail">
+             <img src="img/texture.png" ></img>
+         </div>
+      </div>
+      <div class="content-box">
+         <div class="header">SEER: Auto-Generating Extraction Rules from User-Highlighted Texts</div> 
+         <div class="date">Fall 2015 to 2017</div>
+         <div class="thumbnail">
+            <img src="img/seer.png" ></img>
+         </div>
+      </div>
+
+		<div class="content-box">
+			<span class="header">FlashExtract Implementation with Node.js.</span>
+    		<span class="date">Fall 2014.</span>
+			<span class="location">Design Technology Lab, New York University Abu Dhabi.</span>
+    		<div class="thumbnail">
+				<img src="img/flashextract.png"></img>
+			</div>
+    		<span class="links">
+    			<a href="https://bitbucket.org/thedtlteam/flashextract">Code.</a>
+    		</span>
+		</div>
+    	<div class="content-box">
+			<div class="header">Hadith Visualization with d3.js.</div>
+			<div class="date">Fall 2014.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/hadithvis1.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/hadithvis">Code.</a> 
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Secure File Transfer with Dropbox and Python.</div>
+			<div class="date">Spring 2016. </div> 
+			<div class="location">CS-GY6903 Applied Cryptography, New York University-Tandon.</div>
+			<div class="thumbnail">
+				<img src="img/securedropbox8.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/CryptographySecureChat">Code.</a> 
+				<a href="pdf/CS-GY6903-SecureDropbox.pdft">Slides.</a> 
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">311 Data Analytics with MapReduce Tools.</div>
+			<div class="date">Spring 2016. </div> 
+			<div class="location">CS-GY9223 Programming for Big Data Analytics, New York University-Tandon.</div>
+			<div class="thumbnail">
+				<img src="img/311analytics5.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/Analytics311">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Server and Client Chat with Python.</div>
+			<div class="date">Spring 2016. </div> 
+			<div class="location">CS-GY6813 Network Security, New York University-Tandon.</div>
+			<div class="thumbnail">
+				<img src="img/serverclient7.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/ServerClientPython">Encrypted Server/Client Code.</a>
+				<a href="/pdf/CS-GY6813-CryptoII.pptx">Slides for Encrypted Server/Client.</a>
+				<a href="https://github.com/theTrueCaptian/ReferenceMonitorPython">Reference Monitor Code.</a>
+				<a href="/pdf/CS-GY6813-ReferenceMonitor.pptx">Slides for Reference Monitor.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Serialized Database System Implementation with Java.</div>
+			<div class="date">Fall 2015.</div> 
+			<div class="location">CSCI-GA2434 Advanced Topics Database Systems, New York University-Courant.</div>
+			<div class="thumbnail">
+				<img src="img/serializeddb.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://bitbucket.org/maedah/repcrec">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Underground Forum Visualization with d3.js.</div>
+			<div class="date">Fall 2015.</div> 
+			<div class="location">CS-GY6313 Information Visualization, New York University-Tandon.</div>
+			<div class="thumbnail">
+				<img src="img/undergroundforum.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/Tebyt/Underground-Forum-Visualization">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Dalilah: The Arabic Dialect Guide, Google Chrome Extension.</div>
+			<div class="date">Spring 2015.</div> 
+			<div class="location">New York University Abu Dhabi Hackathon.</div>
+			<div class="thumbnail">
+				<img src="img/dalilah.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/NYUAD-Hackathon/dalila">Code.</a> 
+				<a href="http://www.lrec-conf.org/proceedings/lrec2016/pdf/760_Paper.pdf">Paper.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">RSS Reader with PostgreSQL and Heroku.</div>
+			<div class="date">Fall 2013.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/rss.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/hc">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">HTML5 Mulitplayer Shapes Game for Heroku.</div>
+			<div class="date">Fall 2013.</div> 
+			<div class="location">Final Project. CSC563 Multithreaded Distributed Programming, Southern Connecticut State University.</div>
+			<div class="thumbnail">
+				<img src="img/mulitplayershapes2.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="http://csc536maeda.herokuapp.com/">Demo.</a> 
+				<a href="https://github.com/theTrueCaptian/ShapesMultiplayer">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Pacman Animation with OpenGL C++.</div>
+			<div class="date">Fall 2013.</div> 
+			<div class="location">Final Project. CSC431 Computer Graphics, Southern Connecticut State University.</div>
+			<div class="thumbnail">
+				<img src="img/pacman-anim1.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/CompGraphicsFinalProject">Code.</a>
+				<a href="img/pacman-anim-demo.mp4">Video.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Ghostbusters Game for Android.</div>
+			<div class="date">Summer 2013.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/cursedhome3.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/Ghostbusters">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Quiz App for Android.</div>
+			<div class="date">Summer 2013.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/qisas32.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/QisasAndroid">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Tracing Arabic Letters App for Android on Google Play.</div>
+			<div class="date">Summer 2012.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/tracing2.png" style="height:100px"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<!--<a href="https://play.google.com/store/apps/details?id=tracing.android">App.</a>-->
+				<a href="https://github.com/theTrueCaptian/TracingApp">Code.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Connected Arabic Words for Android on Google Play.</div>
+			<div class="date">Summer 2012.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/connected2.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<!--<a href="https://play.google.com/store/apps/details?id=maeda.android">App.</a>-->
+				<a href="https://github.com/theTrueCaptian/ConnectedArabicWordsApp">Code.</a> 
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Handwritten Recognition using Neural Networks in Java.</div>
+			<div class="date">Fall 2011.</div> 
+			<div class="location">CSC481 Artificial Intelligence and CSC400 Computer Science Seminar, Southern Connecticut State University.</div>
+			<div class="thumbnail">
+				<img src="img/handwrittenrecognizer.png" style="width: 150px;"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/HandwrittenRecognizer">Code.</a> 
+				<a href="pdf/CSC400-UserManual.pdf">User Manual.</a> 
+				<a href="pdf/CSC400-ProposalDraft.pdf">Proposal.</a> 
+				<a href="pdf/CSC400-NeuralNetworksInJavaPres.pptx">Slides.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">XOR using Neural Networks in Java.</div>
+			<div class="date">Fall 2011.</div> 
+			<div class="location">CSC481 Artificial Intelligence, Southern Connecticut State University.</div>
+			<div class="thumbnail" >
+				<img src="img/singleneuron.png" style="height:130px"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/NeuralNetworkXOR">XOR Neural Network.</a>
+				<a href="https://github.com/theTrueCaptian/SingleNeuron">Single Neuron.</a>
+			</div>
+		</div>
+		<div class="content-box">
+			<div class="header">Huffman Encoding Compression Algorithm.</div>
+			<div class="date">Fall 2011.</div> 
+			<div class="location">CSC321 Algorithms, Southern Connecticut State University.</div>
+			<div class="thumbnail">
+				<img src="img/huffman2.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/Huffman">Code.</a>
+			</div>
+		</div>
+		<!--<div class="content-box">
+			<div class="header">SCSU Alumni Website with WAMP.</div>
+			<div class="date">Spring 2011.</div> 
+			<div class="location">CSC330 Software Engineering, Southern Connecticut State University.</div>
+			<div class="thumbnail">
+				<img src="img/xxx.png"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="">Code.</a>
+			</div>
+		</div>-->
+		<div class="content-box">
+			<div class="header">Java Applet version of Pacman Game with A* Algorithm Implementation.</div>
+			<div class="date">Summer 2010.</div> 
+			<div class="location"></div>
+			<div class="thumbnail">
+				<img src="img/pacman1.png" style="width: 150px;"></img>
+			</div>
+			<div class="description"></div>
+			<div class="links">
+				<a href="https://github.com/theTrueCaptian/Pacman-the-Thief">Code.</a>
+			</div>
+		</div>
+
+	</div>
+</div>

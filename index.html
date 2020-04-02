@@ -2,31 +2,19 @@
 <html >
 <head>
 	<title> Maeda F. Hanafi </title>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"><!-- load bootstrap -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
 	<link rel="stylesheet" type="text/css" href="css/productionContainer.css" />
 	<link rel="styleSheet" href="css/ui-grid-unstable.css"/>
     <link href="css/opentip.css" rel="stylesheet" type="text/css" />    <!-- fancy tooktips: opentips-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 	<!-- SPELLS -->
 	<script src='js/library/jquery-2.1.0.min.js'></script>
-	<script src='js/library/jcanvas.min.js'></script> <!--Jcanvas for our select tool in the canvas via jquery -->
-	<script type="text/javascript" src="js/library/jquery.jscrollpane.min.js"></script>	<!-- the jScrollPane script for pretty scrolls -->
-    <script src="js/library/opentip-jquery.min.js"></script> <!-- fancy tooktips: opentips-->
-    <script type="text/javascript" src="js/library/jquery.mousewheel.js"></script>	<!-- the jScrollPane script for pretty scrolls -->
-
+	
 	<!-- Other important js -->
-	<script src="js/library/lodash.js"></script>
-	<script src="js/utils.js"></script>
-	<!-- Plugin to wait for an element to load-->
-	<script src="js/library/arrive.min.js"></script>
-
-
-	<script src='js/library/angular.js'></script>
-	<!--Angular dependencies-->
-	<script src='js/library/angular-route.js'></script>
-	<script src="/js/library/ui-grid-unstable.js"></script>
-	<script src='js/library/ui-bootstrap-tpls-0.12.0.min.js'></script>
+	<script src="js/library/lodash.js"></script>	
 
 	<!-- Main controller files -->
     <script src='js/controller/page_controller.js'></script>
@@ -35,452 +23,377 @@
 	    
 	</style>
 </head>
-
 <style>
+
+
+
+/********************************************************************************/
 h4{
-	margin-top:0px;
+    margin-top:0px;
+    margin-bottom:0px;
 }
 /* Allow for properly indented content in lists. */
 ol{
-	list-style: disc outside none;
-	padding-left:20px;
+    list-style: disc outside none;
+    padding-left:20px;
 }
 p{
-	margin:0px;
+    margin:0px;
 }
-.page{
-	width:60%; 
-	margin:auto; 
-}
-.resume-row-parent{
-	width:100%; display:table;
-	padding-top: 20px;
-    padding-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
-}
-.resume-header-parent{
-	width:100%; display:table; padding-top: 20px;
-    padding-bottom: 20px;
-}
-.resume-row{
-	
-	width:100%; display:table-row
-}
-.resume-col-header{
-	display:table-cell; float: left; vertical-align: top; width:25%; padding-left:10px;
-	padding-right:30px
-}
-.resume-col-content{
-	display:table-cell;float:right; vertical-align: top; width: 75%; padding-right:30px
-}
-.resume-button{
-	float:right;
-	background-color: #3c3c3c;
+
+.thumbnail{
     border: none;
+}
+
+.button{
+    border: none;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    height: fit-content;
+    margin: 5px 10px;
+    padding: 3px 5px;
+
+}
+.clicked, .button:hover{
+    background-color: #3c3c3c;
     color: white;
-    height: 40px;
-    padding: 10px;
 }
-.resume-button-header{
-	width:100%; 
-	display:table; 
-    padding-bottom: 5px;
-    padding-right: 30px;
+
+#dynamic-content{
+	overflow-y: scroll;
+	height: 100%;
+	overflow-x: hidden;
+	margin-right: 5px;
+	width:95%;
 }
-.content-text{
-	color:gray;
-	font-size: 14px;
+
+body {
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+  grid-template-columns: minmax(5%,30px) minmax(150px,200px) auto 5%;
+  grid-template-rows: 150px auto;
+  /*grid-template-columns: 5% 15% 75% 5%;
+  grid-template-rows: auto auto;*/
+  grid-template-areas: 
+    ". profile header ."
+    ". nav main ."
 }
-.content-text-bold{
-	color:gray;
-	font-size: 14px;
-	font-weight: bold;
+
+body>.profile{
+	grid-area: profile;
+	padding: 15px;
+	margin:auto;
 }
-.content-header{
-	color:black;
+
+body>.header{
+	grid-area: header;
+	padding: 15px;
+
+    width: 95%;
+	border-bottom: 1px solid #eee;
+
+	margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+body>.nav{
+	grid-area: nav;
+	padding: 15px;
+
+	margin-top: 5px;
+    margin-bottom: 5px;
+}
+body>.main{
+	grid-area: main;
+	padding: 15px;
+
+	font-size: 12px;
+}
+
+body>.nav, .resume-row .resume-col-header{
 	font-size: 16px;
+	font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #333;
 }
-.content-box{
-    padding-bottom: 15px;	
+::-webkit-scrollbar {
+    width: 6px;
+    height: 12px;
+    background-color: #F5F5F5;
 }
+/***********************************************************************************************************************************/
+
+.resume-row{
+    width:100%; 
+    padding: 10px;
+    font-size: 12px;
+
+    display: grid; 
+    grid-template-rows : auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "resume-col-header"
+        "resume-col-content";
+
+    border-bottom: 1px solid #eee;	
+}
+.resume-row .resume-col-header{
+	padding-bottom: 10px;
+}
+.resume-row .resume-col-content{
+   padding-left: 15px;
+}
+/***********************************************************************************************************************************/
+/* content- --> this means its a project, presentation, paper, item, etc.*/
+.content-box{ 
+    /* 
+        a box contains 
+        Thumbnail (code,report,links)   --- header  --  date
+                                        --- location
+                                        --- description
+    */
+    /*display: grid; 
+    grid-gap: 0px 5px;
+
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "header  thumbnail"
+        "date  thumbnail"
+        "location  thumbnail"
+        "description  thumbnail"
+        "links  thumbnail"
+    ;*/
+}
+/* content-text-box --> same as above just without thumbnail */
+.content-text-box{ 
+    /* 
+        a content-text-box contains 
+        header  --  date
+        location
+        description
+        links
+    */
+    display: grid; 
+    grid-gap: 0px 5px;
+
+    width:minmax(100%,300px);
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "header date"
+        "location location"
+        "description description"
+        "links links"
+    ;
+}
+.content-box,
+.content-text-box{
+    padding-bottom: 15px;   
+}
+.content-box .header, 
+.content-text-box .header{
+    color:black;
+    font-size: 14px;
+}
+.content-box .location, 
+.content-text-box .location{
+    color:black;
+    /*font-size: 14px;*/
+}
+.content-box .date, .content-box .thumbnail, .content-box .description, .content-box .links,
+.content-text-box .date, .content-text-box .description, .content-text-box .links{
+    color:gray;
+    /*font-size: 14px;*/
+}
+.content-box .header, 
+.content-text-box .header{
+    grid-area: header;
+}
+.content-box .date,
+.content-text-box .date{
+    grid-area: date;
+    text-align: right;
+}
+.content-box .location,
+.content-text-box .location{
+    grid-area: location;
+}
+.content-box .thumbnail{
+    grid-area: thumbnail;
+}
+.content-box .thumbnail img{
+    border: 1pt gray solid;
+    border-radius: 0.5pt;
+}
+.content-box .description,
+.content-text-box .description{
+    grid-area: description;
+}
+.content-box .links,
+.content-text-box .links{
+    grid-area: links;
+}
+
+/***********************************************************************************************************************************/
+/* list --> this contains a compact ist of list-items and publication-items
+   list-items contains 
+    - a header within the item with darker font
+    - a description with gray font
+    - date
+    - location
+    - links
+    
+   publication-items contains
+    - a header within the item with darker font
+    - title with gray font
+    - date
+    - location
+    - links
+
+*/
+.list{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-flow: row;
+    padding-bottom: 15px;
+    /*font-size: 14px;*/
+}
+.list .list-item{
+    /*display: grid;
+    grid-template-areas: 
+        "header description location date links"
+    ;
+    grid-template-rows: auto;*/
+    /*grid-auto-flow: column;*/
+}
+.list .publication-item{
+    /*display: grid;
+    grid-template-areas: 
+        "header title location date" 
+        "links . . ."
+    ;*/
+}
+
+.tabbed{
+    /*padding-top: 7px;*/
+    padding-left: 15px;
+}
+.list .list-item,
+.list .publication-item{
+    padding-bottom: 7px;
+}
+.list-item .header,
+.publication-item .header{
+    color:black;
+    font-size: 14px;
+}
+.list-item .description, .list-item .date, .list-item .location,
+.publication-item .title, .publication-item .date, .publication-item .location{
+    color:gray;
+}
+
+.list-item .description{
+    grid-area: description;
+}
+.list-item .date,
+.publication-item .date{
+    grid-area: date;
+}
+.list-item .location,
+.publication-item .location{
+    grid-area: location;
+}
+.list-item .links, 
+.publication-item .links{
+    grid-area: links;
+}
+
 a{
-	color:gray;
-	font-weight:normal;
-	text-decoration: underline;
+    color:gray;
+    font-weight:normal;
+    text-decoration: underline;
 }
+/***********************************************************************************************************************************/
+/* gallery --> contains art-item
+   art-item contains
+   - header 
+   - image
+   - link
+*/
+.gallery{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding-bottom: 15px;
+    /*font-size: 14px;*/
+}
+.gallery .art-item{
+    padding-bottom: 7px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
+}
+.art-item .header,.art-item .links{
+    /*font-size: 14px;*/
+    margin: auto;
+    opacity: 0;
+    color:black;
+    z-index: 100;
+}
+.art-item .header{
+    grid-row: 1 / span 1;
+    grid-column: 1;
+}
+.art-item .links{
+    grid-row-start: 2;
+    grid-column: 1;
+}
+.art-item .thumbnail{
+    grid-row-start: 1;
+    grid-column: 1;
+}
+
+.art-item:hover{
+    background: lightgray;
+}
+.art-item:hover .header, .art-item:hover .links{
+    opacity: 100;
+    color:black;
+    z-index: 100;
+}
+.art-item:hover .thumbnail{
+    background: lightgray;
+    opacity: 0.2;
+}
+
+
 </style>
 
-<body ng-app="maeda_app" >
-
-    <div class="page" ng-controller="page_controller" keypress-events>
-    	<div  class="resume-button-header" >
-    		<button class="resume-button" ng-click="go('/pdf/MaedaHanafiResumeFeb2020.pdf')">Resume</button>
-        </div>
-        <div  class="resume-header-parent" >
-        	<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<img src="img/maeda.jpg" style="width:100px; border-radius: 10px;"></img>
-	        	</div>
-	        	<div class="resume-col-content">
-	        		<div style="display:table-cell;vertical-align: top;float:left">
-				        <h2 class="">Maeda F. Hanafi</h2>
-				        <p class="content-text">Abu Dhabi, UAE // New York City, NY, USA // New Haven, CT, USA</p>
-				        <p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>
-				        <p class="content-text">maeda.hanafi@nyu.edu // maeda.han@gmail.com</p>
-		        	</div>
-		        	
-		        </div>
-	        </div>
-        </div>
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>About me</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text" style="color:black">
-	        		<p>Hello! I am Maeda F. Hanafi. I am currently pursuing a Ph.D. in Computer Science at New York University. I work with the <a href="http://sites.nyuad.nyu.edu/dtl/">Design Technology Lab</a> at New York University's Abu Dhabi campus under the supervision of Prof. Azza Abouzied. My work mainly revolves around human-in-loop systems, program synthesis, data extraction, and visualization. </p>
-	        	</div>
-	        </div>
-        </div>
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Education</h4>
-	        	</div>
-	        	<div class="resume-col-content ">
-	        		<div class="content-box">
-	        			<p class="content-header">Ph.D. in Computer Science. New York University (NYU) - Tandon School of Engineering.</p>
-	        			<p class="content-text" >2015-Present.</p>
-	        			<p class="content-text">New York University Abu Dhabi (NYUAD) Global Ph.D. Student Fellow, Graduate Student Research Assistantship. </p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">B.S. in Computer Science. Southern Connecticut State University (SCSU).</p>
-	        			<p class="content-text">2010-2012.</p> 
-	        			<p class="content-text">Cum Laude, 3.62/4.0 GPA. </p>
-	        			<p class="content-text" >Graduate Courses: Multithreaded Distributed Programming, Advanced Software Engineering, Computer Graphics, Web Programming, Advanced Database System, Computer Networks (SCSU, 2013)</p>
-						<p class="content-text">Other institutions: University of New Haven (2009), Gateway Community College (2008-2009). </p>
-	        		</div>
-	        		
-	        	</div>
-	        </div>
-        </div>	
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Awards and Scholarships</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-	        		<div class="content-box">
-	        			<p class="content-header">New York University Abu Dhabi Global Ph.D. Student Fellowship.</p> 
-	        			<p class="content-text">Stipend and tuition scholarship. New York and Abu Dhabi. 2015-present.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Cum Laude Award. Computer Science.</p> 
-	        			<p class="content-text">Honors Convocation, Southern Connecticut State University (SCSU). 2012. </p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Academic Excellency Award in Computer Science. </p> 
-	        			<p class="content-text">Honors Convocation, SCSU. Spring 2012. </p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Distinguished Scholar Awards ($12,000 scholarship).</p> 
-	        			<p class="content-text">University of New Haven. Fall 2009. </p>
-	        		</div>
-	        	</div>
-	        </div>
-        </div>	
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Research Experience</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-					<div class="content-box">
-	        			<p class="content-header">A Collaborative Framework for Structure Identification over Print Documents</p> 
-	        			<p class="content-text">Maeda F. Hanafi, Miro Mannino, and Azza Abouzied</p>
-		        		<p class="content-text">SIGMOD. HILDA 2019. <a href="https://hilda.io/2019/proceedings/HILDA2019_paper_8.pdf">Paper.</a></p>
-	        		</div>
-					<!-- To uncomment when work published
-					<div class="content-box">
-	        			<p class="content-header">FlowFix/WhyFlow: Diagnosing Incorrect Behavior in Large Data Pipelines</p>
-	        			<p class="content-text">Poster Presentation. NYUAD Annual Research Conference 2017. Fall 2017.</p>
-		        		<p class="content-text"><a href="http://maedahanafi.info/pdf/KBAnalysis2017NYUADDraft2.pdf">Poster.</a><a href="https://bitbucket.org/maedah/flowfix/src/master/">Code. </a></p>
-	        		</div>
-					<div class="content-box">
-						<p class="content-text">Seminar and Poster Presentation. IBM Research Almaden, San Jose, CA. September 2017. </p>
-						<p class="content-text"><a href="http://maedahanafi.info/pdf/KBAnalysis2017FinalIBM.pptx">Slides.</a> <a href="http://maedahanafi.info/pdf/KBAnalysisPosterPresentation.pdf">Poster.</a> <a href="http://maedahanafi.info/pdf/OneMinuteMadnessPres2017.pptx">One Minute Presentation.</a></p>
-					</div>
-					-->
-					<div class="content-box">
-	        			<p class="content-header">Synthesizing Extraction Rules from User Examples with SEER</p> 
-	        			<p class="content-text">Maeda F. Hanafi, Azza Abouzied, Laura Chiticariu, and Yunyao Li</p>
-		        		<p class="content-text">SIGMOD 2017. <a href="https://dl.acm.org/citation.cfm?id=3056443">Demo Paper.</a> <a href="http://maedahanafi.info/pdf/SIGMODPoster.pdf">Poster.</a></p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">SEER: Auto-Generating Information Extraction Rules from User-Specified Examples</p> 
-	        			<p class="content-text">Maeda F. Hanafi, Azza Abouzied, Laura Chiticariu, and Yunyao Li</p>
-		        		<p class="content-text">CHI 2017. <a href="https://dl.acm.org/citation.cfm?id=3025540">Paper.</a> <a href="https://www.youtube.com/watch?v=xF7WhkXk1Y0">Video.</a> <a href="http://maedahanafi.info/pdf/SeerChiAppendix.pdf">Appendix.</a> <a href="https://www.slideshare.net/MaedaHanafi/seer-autogenerating-information-extraction-rules-from-userspecified-examples">CHI Slides.</a><!-- <a href="https://bitbucket.org/maedah/seer">Code.</a>--></p>
-	        		</div>
-	        		<!-- privacy bitchesss
-	        		<div class="content-box">
-	        			<p class="content-header">Qualifying Exam.</p> 
-	        			<p class="content-text">Qualifying Exam. Fall 2016. </p>
-		        		<p class="content-text"><a href="/pdf/Qualifiers2016PPTReformat.pdf">Slides.</a> <a href="/pdf/QualifierReport2016Updated.pdf">Detailed Report.</a></p>
-	        		</div>
-	        		-->
-					<div class="content-box">
-	        			<p class="content-header">Seer: An End-to-End Automated Workflow for Information Extraction using User Highlights.</p> 
-	        			<p class="content-text">Poster Presentation. North East Database Day, Massachusetts Institute of Technology. Feb 2016.</p>
-		        		<p class="content-text"><a href="http://maedahanafi.info/NEDBPosterPresentationDraft4.pdf">Slides.</a></p>
-	        		</div>
-					<div class="content-box">
-	        			<p class="content-text">Seminar and Poster Presentation. IBM Research Almaden, San Jose, CA. August 28, 2015. </p>
-		        		<p class="content-text"><a href="http://maedahanafi.info/pdf/Seer2015FinalIBM.pptx">Slides.</a> <a href="http://maedahanafi.info/pdf/SeerIBMPosterPosterPresentationDraft3.pdf">Poster.</a> <a href="http://maedahanafi.info/pdf/OneMinuteMadnessPres.pptx">One Minute Presentation.</a></p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Texture: Structuring Semi-Structured Documents. </p> 
-	        			<p class="content-text">Seminar. University of California, Berkeley. July 1, 2015. </p>
-		        		<p class="content-text"><a href="http://maedahanafi.info/pdf/TextureBerkeley2015.pptx">Slides.</a></p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Texture: Extracting Texts using User Annotations. </p> 
-	        			<p class="content-text">Poster Presentation. NYUAD Annual Research Conference 2015. Feb-Mar 2015. </p>
-		        		<p class="content-text"><a href="http://maedahanafi.info/pdf/NYUADResearchConference2015PosterPresentationDraft3.pdf">Poster.</a></p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Texture. </p> 
-	        			<p class="content-text">Design Technology Lab, NYUAD. Fall 2014. </p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">FlashExtract Implementation. </p> 
-	        			<p class="content-text">Design Technology Lab, NYUAD. Fall 2014. </p>
-		        		<p class="content-text"><a href="https://bitbucket.org/thedtlteam/flashextract">Code.</a>
-                            <!-- To uncomment when done bitchess <a href="pdf/FlashExtractExp.pdf"> Detailed Explanation.</a>-->
-                        </p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Change Theory: Towards a Better Understanding of Software Maintenance </p> 
-	        			<p class="content-text">Amal Abdel-Raouf and Maeda Hanafi</p>
-		        		<p class="content-text">WSEAS Transactions on Computers. Spring 2014. <a href="https://www.researchgate.net/publication/287543505_Change_theory_Towards_a_better_understanding_of_software_maintenance">Paper.</a> </p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Software Maintenance from the Change Theory Perspective</p> 
-	        			<p class="content-text">Maeda Hanafi and Amal Abdel-Raouf</p>
-		        		<p class="content-text">EUROPMENT conference Circuits, Systems, Signal Processing, Communications and Computers, March 2014. <a href="http://www.europment.org/library/2014/venice/bypaper/OLA/OLA-10.pdf">Paper.</a>  </p>
-	        		</div>
-	        	</div>
-	        </div>
-        </div>
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Work Experience</h4>
-	        	</div>
-
-	        	<div class="resume-col-content ">
-					<div class="content-box">
-						<p class="content-header">Research Internship. IBM Research Almaden, San Jose, CA. </p>
-						<p class="content-text">Summer 2017. Mentors: Yunyao Li and Marina Danilevsky.</p>
-					</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Research Assistant. Design Technology Lab, New York University Abu Dhabi (NYUAD).</p>
-	        			<p class="content-text">2014-Present. Advisor: Azza Abouzied.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Teaching Assistant, Computer Science Dept., NYUAD.</p>
-	        			<p class="content-text">CS - AD 390 Capstone Data Extraction </p>
-	        			<p class="content-text">Spring 2017. Instructors: Azza Abouzied.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Research Internship. IBM Research Almaden, San Jose, CA. </p>
-	        			<p class="content-text">Summer 2015. Mentors: Yunyao Li and Laura Chiticariu.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Research Assistant. Computer Science Dept., SCSU.</p>
-	        			<p class="content-text">Fall 2013 - Spring 2014. Advisor: Amal Abdel-Raouf.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Teaching Assistant, Computer Science Dept., SCSU.</p>
-	        			<p class="content-text">Spring 2013. Instructor: Amal Abdel-Raouf.</p>
-	        			<p class="content-text">Courses: CSC321 Algorithm Design and Analysis, CSC152 Computer Programming I, CSC310 Multimedia Systems. </p>
-	        			<p class="content-text">Graded and corrected homeworks and Java programming projects, and assisted students with homework assignments.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-text">Fall 2013. Instructors: Prof. Amal Abdel-Raouf and Prof. Taraneh Seyed.</p>
-	        			<p class="content-text">Courses: CSC310 Multimedia Systems, CSC152 Computer Programming I, CSC200 Information Management and Productivity Software. </p>
-	        			<p class="content-text">Conducted tutor sessions for Java programming.</p>
-	        		</div>
-	        		<div class="content-box">
-	        			<p class="content-header">Voluntary Database Internship, Masjid Al Islam Organization, New Haven, CT.</p>
-	        			<p class="content-text">Summer 2009. </p>
-	        			<p class="content-text">Managed and updated the website (http://www.masjidalislam.net/) (PHP and Joomla).</p>
-	        			<p class="content-text">Gathered the data to put into the database (MySQL). </p>
-	        		</div>
-	        	</div>
-	        </div>
-        </div>		
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Links</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-	        		<div class="content-box">
-	        			<span class="content-text-bold">Github <a href="https://github.com/theTrueCaptian">https://github.com/theTrueCaptian</a></span>
-	        		</div>
-	        		<div class="content-box">
-	        			<span class="content-text-bold">BitBucket <a href="https://bitbucket.org/maedah/">https://bitbucket.org/maedah/</a></span>
-	        		</div>
-	        		<div class="content-box">
-	        			<span class="content-text-bold">Blog <a href="http://maeda-blog.herokuapp.com/">http://maeda-blog.herokuapp.com/</a></span>
-	        		</div>
-	        		
-	        	</div>
-	        </div>
-        </div>	
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header ">
-		        	<h4>Languages and Technologies</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-	        		Java, Spring MVC, JavaScript/Node.js, Jquery, D3.js, React.js, Angular.js, SQL, SASS, CSS, XML, Android Java, C++/C, Python
-	        	</div>
-	        </div>
-        </div>	
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header ">
-		        	<h4>Hobbies</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-	        		Amigurumi (Doll Knitting), 3D Modeling (Blender)
-	        	</div>
-	        </div>
-        </div>	
-        <div class="resume-row-parent" ng-hide="obj.privacyon" >
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Media</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-	        		<ol>
-					    <li><a href="https://thesouthernnews.org/2012/11/12/teenager-due-to-graduate-from-scsu-this-year/">Teenager Due to Graduate from SCSU this Year. Southern News.</a> 2012.</li>
-					    <li><a href="https://www.youtube.com/watch?v=zpZcoRMnYeA">13-Year-Old Conn. Muslim Headed to University. Fox News.</a> 2009.</li>
-					    <li><a href="http://www.nhregister.com/article/NH/20090531/NEWS/305319986">Girl, 13, will study full time at UNH. New Haven Register. </a> 2009. </li>
-					</ol>
-	        	</div>
-	        </div>
-        </div>	
-        <div class="resume-row-parent">
-			<div class="resume-row">
-	        	<div class="resume-col-header">
-		        	<h4>Miscellaneous Projects and Presentations</h4>
-	        	</div>
-	        	<div class="resume-col-content content-text">
-	        		<div class="content-box">
-				    	<span class="content-text-bold">Program by Demonstration using Version Space Algebra.</span> Research Presentation. NYUAD. Fall 2016. <a href="https://www.slideshare.net/MaedaHanafi/program-by-demonstration-using-version-space-algebra">Slides.</a> </a>
-			    	</div>
-
-	        		<div class="content-box">
-				    	<span class="content-text-bold">3D Model of Needle for Knitting.</span> Suitable for 3D printing. <a href="/pdf/needle.blend">blend file (for Blender 3D).</a>
-			    	</div>
-
-				    <!--<div class="content-box">
-				    	<a class="content-text-bold" href="http://heritage-emporium.org/index.php">Heritage Emporium.</a>
-				    </div>-->
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Hadith Visualization.</span> Fall 2014.<a href="https://bitbucket.org/maedah/hadithvis">Code.</a> 
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Crawling the Deep Net.</span> CS-GY 6033 Algorithms, NYU-Tandon. <a href="http://maedahanafi.info/pdf/AlgorithmsReport2016.pdf">Paper.</a> 
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Secure File Transfer with Dropbox.</span> CS-GY 6903 Applied Cryptography, NYU-Tandon. Spring 2016. <a href="https://github.com/theTrueCaptian/CryptographySecureChat">Code.</a> 
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">311 Data Analytics with MapReduce Tools.</span> CS-GY 9223 Programming for Big Data Analytics, NYU-Tandon. Spring 2016.<a href="https://github.com/theTrueCaptian/Analytics311">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Serialized Database System Implementation with Java.</span> CSCI-GA 2434 Advanced Topics Database Systems, NYU-Courant. Fall 2015. <a href="https://bitbucket.org/maedah/repcrec">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Underground Forum Visualization with d3.js.</span> CS-GY 6313 Information Visualization, NYU-Tandon. Fall 2015. <a href="/dataforumvis">Demo.</a> <a href="https://github.com/Tebyt/Underground-Forum-Visualization">Code.</a> 
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Dalilah: The Arabic Dialect Guide, Google Chrome Extension.</span> NYUAD Hackathon. Spring 2015. <a href="https://github.com/NYUAD-Hackathon/dalila">Code.</a> <a href="http://www.lrec-conf.org/proceedings/lrec2016/pdf/760_Paper.pdf">Paper.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">RSS Reader with PostgresSQL and Heroku.</span> Fall 2013. <a href="https://github.com/theTrueCaptian/hc">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">HTML5 Mulitplayer Shapes Game for Heroku.</span> Final Project. CSC563 Multithreaded Distributed Programming, SCSU. Fall 2013. <a href="http://csc536maeda.herokuapp.com/">Demo.</a> <a href="https://github.com/theTrueCaptian/ShapesMultiplayer">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Pacman Animation with OpenGL C++.</span> Final Project. CSC431 Computer Graphics, SCSU. Fall 2013. <a href="https://github.com/theTrueCaptian/CompGraphicsFinalProject">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Ghostbusters for Android in Google Play.</span> Game Development for Android in Java. Summer 2013. <a href="https://github.com/theTrueCaptian/Ghostbusters">Code.</a>
-		    		</div>
-				    
-				    <div class="content-box">
-				    	<span class="content-text-bold">Quiz Game for Android in Google Play.</span> Educational App Development for Android in Java. Summer 2013. <a href="https://github.com/theTrueCaptian/QisasAndroid">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Tracing Arabic Letters for Android in Google Play.</span> Educational App Development for Android in Java. Spring 2012 to Summer 2013. <a href="https://play.google.com/store/apps/details?id=tracing.android">Demo.</a> <a href="https://github.com/theTrueCaptian/TracingApp">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Connected Arabic Words for Android in Google Play.</span> Educational and Game Development for Android in Java. Spring 2012 to Summer 2013. <a href="https://play.google.com/store/apps/details?id=maeda.android">App.</a> <a href="https://github.com/theTrueCaptian/ConnectedArabicWordsApp">Code.</a> 
-				        <p>Our friends at Scalosphere also extended this app into their own <a href="https://play.google.com/store/apps/details?id=com.scalosphere.te">app. </a>
-			        </div> 
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Handwritten Recognition using Neural Networks in Java. </span> CSC 481 Artificial Intelligence and CSC400 Computer Science Seminar, SCSU. Fall 2011. <a href="https://github.com/theTrueCaptian/HandwrittenRecognizer">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">XOR using Neural Networks in Java. </span> CSC 481 Artificial Intelligence, SCSU. Fall 2011. <a href="https://github.com/theTrueCaptian/NeuralNetworkXOR">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Single Neuron in Java.</span> CSC 481 Artificial Intelligence, SCSU. Fall 2011.<a href="https://github.com/theTrueCaptian/SingleNeuron">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Huffman Encoding.</span> Algorithms, SCSU. <a href="https://github.com/theTrueCaptian/Huffman">Code.</a>
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">SCSU Alumni Website.</span> CSC330 Software Engineering, SCSU. Spring 2011.
-				    </div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Weblog Analytic Research, MS Access database.</span> CSC335 Database Management System Design, SCSU. Fall 2010. 
-			    	</div>
-
-				    <div class="content-box">
-				    	<span class="content-text-bold">Java Applet version of Pacman Game with A* Algorithm Implementation. </span> Summer 2010. <a href="https://github.com/theTrueCaptian/Pacman-the-Thief">Code.</a>
-			    	</div>
-
-	        	</div>
-	        </div>
-        </div>	
-        
+<body >
+	<div class="profile">
+    	<img src="img/maeda.jpg" style="height:100%; border-radius: 10px;"></img>
+	</div>
+	<div class="header">
+        <h3 class="">Maeda F. Hanafi</h3>
+        <p class="content-text">Abu Dhabi, UAE // New York City, NY, USA // New Haven, CT, USA</p>
+        <p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>
+        <p class="content-text">maeda.hanafi@nyu.edu // maeda.han@gmail.com</p>
     </div>
+    <div class="nav">
+    	<div class="button" onclick="setPage('partial/projects.html',0)">Projects</div>
+    	<div class="button" onclick="setPage('partial/cv.html',1)">Curriculum Vitae</div>
+    	<div class="button" onclick="window.open('pdf/MaedaHanafiResumeFeb2020.pdf','_blank')">Resume Download</div>
+    	<!--<div class="button" onclick="setPage('partial/hobbies.html',3)">Hobbies</div>-->
+        
+	</div>
+	<div id="dynamic-content" class="main">
+    </div>
+
+   
 
 </body>
 </html>
