@@ -40,9 +40,29 @@ ol{
 p{
     margin:0px;
 }
-
+a{
+    color:gray;
+    font-weight:normal;
+    text-decoration: underline;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 12px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #777676;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
 .thumbnail{
     border: none;
+    margin:0px;
 }
 
 .button{
@@ -74,8 +94,6 @@ body {
   overflow: hidden;
   grid-template-columns: minmax(5%,30px) minmax(150px,200px) auto 5%;
   grid-template-rows: 150px auto;
-  /*grid-template-columns: 5% 15% 75% 5%;
-  grid-template-rows: auto auto;*/
   grid-template-areas: 
     ". profile header ."
     ". nav main ."
@@ -92,7 +110,7 @@ body>.header{
 	padding: 15px;
 
     width: 95%;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #ccc;
 
 	margin-top: auto;
     margin-bottom: auto;
@@ -120,12 +138,8 @@ body>.nav, .resume-row .resume-col-header{
     line-height: 1.1;
     color: #333;
 }
-::-webkit-scrollbar {
-    width: 6px;
-    height: 12px;
-    background-color: #F5F5F5;
-}
-/***********************************************************************************************************************************/
+
+/********************************************************************************/
 
 .resume-row{
     width:100%; 
@@ -147,28 +161,62 @@ body>.nav, .resume-row .resume-col-header{
 .resume-row .resume-col-content{
    padding-left: 15px;
 }
-/***********************************************************************************************************************************/
-/* content- --> this means its a project, presentation, paper, item, etc.*/
-.content-box{ 
-    /* 
-        a box contains 
-        Thumbnail (code,report,links)   --- header  --  date
-                                        --- location
-                                        --- description
-    */
-    /*display: grid; 
-    grid-gap: 0px 5px;
+/*********************************************************************************/
+/* content- --> this means its a project with a thumbnail*/
 
-    grid-template-columns: 60% 40%;
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-areas: 
-        "header  thumbnail"
-        "date  thumbnail"
-        "location  thumbnail"
-        "description  thumbnail"
-        "links  thumbnail"
-    ;*/
+.projects-gallery{
+  display:grid;
+  grid-template-columns: 50% 50%;
+  width:100%;
+  grid-column-gap: 30px;
 }
+.content-box{
+  display:grid;
+  grid-template-columns: 40% auto auto;
+  /*grid-column-gap: 10px;*/
+  grid-template-rows: minmax(0, min-content) minmax(0, min-content) auto;
+  grid-template-areas: 
+     "thumbnail header header"
+     "thumbnail date date"
+     "thumbnail links links";
+     /*"thumbnail location location"
+     "thumbnail description description"
+  ;*/
+
+  font-size: 12px;
+  margin-right: 10px;
+}
+.content-box .header{
+  grid-area:header;
+  font-size: 14px
+}
+.content-box .date{
+  grid-area:date;
+  text-align:left;
+
+}
+.content-box .location{
+  grid-area:location;
+  display: none;
+}
+.content-box .description{
+  grid-area:description;
+  display: none;
+}
+.content-box .thumbnail{
+  grid-area:thumbnail;
+}
+.content-box .links{
+  grid-area:links;
+}
+.content-box .thumbnail img {
+  border: 3pt whitesmoke solid;
+  border-radius: 0.5pt;
+}
+
+
+/*********************************************************************************/
+
 /* content-text-box --> same as above just without thumbnail */
 .content-text-box{ 
     /* 
@@ -191,55 +239,37 @@ body>.nav, .resume-row .resume-col-header{
         "links links"
     ;
 }
-.content-box,
 .content-text-box{
     padding-bottom: 15px;   
 }
-.content-box .header, 
 .content-text-box .header{
     color:black;
     font-size: 14px;
 }
-.content-box .location, 
 .content-text-box .location{
     color:black;
-    /*font-size: 14px;*/
 }
-.content-box .date, .content-box .thumbnail, .content-box .description, .content-box .links,
 .content-text-box .date, .content-text-box .description, .content-text-box .links{
     color:gray;
-    /*font-size: 14px;*/
 }
-.content-box .header, 
 .content-text-box .header{
     grid-area: header;
 }
-.content-box .date,
 .content-text-box .date{
     grid-area: date;
     text-align: right;
 }
-.content-box .location,
 .content-text-box .location{
     grid-area: location;
 }
-.content-box .thumbnail{
-    grid-area: thumbnail;
-}
-.content-box .thumbnail img{
-    border: 1pt gray solid;
-    border-radius: 0.5pt;
-}
-.content-box .description,
 .content-text-box .description{
     grid-area: description;
 }
-.content-box .links,
 .content-text-box .links{
     grid-area: links;
 }
 
-/***********************************************************************************************************************************/
+/****************************************************************************/
 /* list --> this contains a compact ist of list-items and publication-items
    list-items contains 
     - a header within the item with darker font
@@ -264,23 +294,11 @@ body>.nav, .resume-row .resume-col-header{
     /*font-size: 14px;*/
 }
 .list .list-item{
-    /*display: grid;
-    grid-template-areas: 
-        "header description location date links"
-    ;
-    grid-template-rows: auto;*/
-    /*grid-auto-flow: column;*/
 }
 .list .publication-item{
-    /*display: grid;
-    grid-template-areas: 
-        "header title location date" 
-        "links . . ."
-    ;*/
 }
 
 .tabbed{
-    /*padding-top: 7px;*/
     padding-left: 15px;
 }
 .list .list-item,
@@ -313,12 +331,8 @@ body>.nav, .resume-row .resume-col-header{
     grid-area: links;
 }
 
-a{
-    color:gray;
-    font-weight:normal;
-    text-decoration: underline;
-}
-/***********************************************************************************************************************************/
+
+/**********************************************************/
 /* gallery --> contains art-item
    art-item contains
    - header 
@@ -387,11 +401,10 @@ a{
     	<div class="button" onclick="setPage('partial/projects.html',0)">Projects</div>
     	<div class="button" onclick="setPage('partial/cv.html',1)">Curriculum Vitae</div>
     	<div class="button" onclick="window.open('pdf/MaedaHanafiResumeFeb2020.pdf','_blank')">Resume Download</div>
-    	<!--<div class="button" onclick="setPage('partial/hobbies.html',3)">Hobbies</div>-->
+    	<div class="button" onclick="setPage('partial/hobbies.html',3)">Misc.</div>
         
 	</div>
-	<div id="dynamic-content" class="main">
-    </div>
+	<div id="dynamic-content" class="main"></div>
 
    
 

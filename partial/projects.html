@@ -1,74 +1,14 @@
-<style>
-   /*.resume-row {
-      width:90%;
-   }*/
-   .about{
-      font-size: 14px;
-   }
-   .projects{
-      display:grid;
-      grid-template-columns: 50% 50%;
-      width:100%;
-      grid-column-gap: 30px;
-   }
-   .projects>.content-box{
-      display:grid;
-      grid-template-columns: 40% auto auto;
-      /*grid-column-gap: 10px;*/
-      grid-template-rows: min-content min-content auto;
-      grid-template-areas: 
-         "thumbnail header header"
-         "thumbnail date date"
-         "thumbnail links links";
-         /*"thumbnail location location"
-         "thumbnail description description"
-      ;*/
 
-      font-size: 14px;
 
-      /*border-bottom: 2px solid whitesmoke;*/
-      margin-top:10px;
-      margin-bottom:10px;
-      margin-right: 10px;
-   }
-   .projects>.content-box .header{
-      grid-area:header;
-      font-size: 16px
-   }
-   .projects>.content-box .date{
-      grid-area:date;
-      text-align:left;
-
-   }
-   .projects>.content-box .location{
-      grid-area:location;
-      display: none;
-   }
-   .projects>.content-box .description{
-      grid-area:description;
-      display: none;
-   }
-   .projects>.content-box .thumbnail{
-      grid-area:thumbnail;
-   }
-   .projects>.content-box .links{
-      grid-area:links;
-   }
-   .projects>.content-box .thumbnail img {
-      border: 3pt whitesmoke solid;
-      border-radius: 0.5pt;
-   }
-</style>
-
-<div class="resume-row about">
+<div class="resume-row">
     <div class="resume-col-header">About me</div>
     <div class="resume-col-content content-text" style="color:black">
-        <p>Hello! I am interested in human-in-the-loop systems, example-driven program synthesis, and data visualizations. My favorite programming language is Java. </p>
+         <p>Welcome! I studied computer science at NYU and my research interests are in human-centered AI, example-driven program synthesis, and human-computer interactions. I am a Java programmer enthusiast. I love coding and have been doing it since I was 10. In my spare time, I tinker with various technologies and languages. When I am not coding, I am either knitting or creating 3D models with Blender 3D.</p>
     </div>
 </div>
 <div class="resume-row">
     <div class="resume-col-header">Coding Projects</div>
-    <div class="resume-col-content projects">
+    <div class="resume-col-content projects-gallery">
 
       <!--<div class="content-box">
          <div class="header">WhyFlow: Interactively Explaining Errors in Data Extraction Pipelines</div> 
@@ -141,7 +81,7 @@
 			</div>
 		</div>
 		<div class="content-box">
-			<div class="header">Server and Client Chat with Python.</div>
+			<div class="header">Encrypted Server and Client Chat with Python.</div>
 			<div class="date">Spring 2016. </div> 
 			<div class="location">CS-GY6813 Network Security, New York University-Tandon.</div>
 			<div class="thumbnail">
@@ -149,12 +89,23 @@
 			</div>
 			<div class="description"></div>
 			<div class="links">
-				<a href="https://github.com/theTrueCaptian/ServerClientPython">Encrypted Server/Client Code.</a>
-				<a href="/pdf/CS-GY6813-CryptoII.pptx">Slides for Encrypted Server/Client.</a>
-				<a href="https://github.com/theTrueCaptian/ReferenceMonitorPython">Reference Monitor Code.</a>
-				<a href="/pdf/CS-GY6813-ReferenceMonitor.pptx">Slides for Reference Monitor.</a>
+				<a href="https://github.com/theTrueCaptian/ServerClientPython">Code.</a>
+				<a href="/pdf/CS-GY6813-CryptoII.pptx">Slides.</a>
 			</div>
 		</div>
+      <div class="content-box">
+         <div class="header">Reference Monitor with Python.</div>
+         <div class="date">Spring 2016. </div> 
+         <div class="location">CS-GY6813 Network Security, New York University-Tandon.</div>
+         <div class="thumbnail">
+            <img src="img/serverclient7.png"></img>
+         </div>
+         <div class="description"></div>
+         <div class="links">
+            <a href="https://github.com/theTrueCaptian/ReferenceMonitorPython">Code.</a>
+            <a href="/pdf/CS-GY6813-ReferenceMonitor.pptx">Slides.</a>
+         </div>
+      </div>
 		<div class="content-box">
 			<div class="header">Serialized Database System Implementation with Java.</div>
 			<div class="date">Fall 2015.</div> 
