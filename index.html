@@ -28,13 +28,14 @@
 
 
 /********************************************************************************/
-h4{
+/*h4{
     margin-top:0px;
     margin-bottom:0px;
-}
-h3{
+}*/
+/*h3{
   font-weight: 700;
-}
+}*/
+
 /* Allow for properly indented content in lists. */
 ol{
     list-style: disc outside none;
@@ -99,7 +100,7 @@ body {
   height: 100%;
   /*overflow: hidden;*/
   grid-template-columns: minmax(5%,30px) minmax(500px, auto) 5%;
-  grid-template-rows: 110px 35px auto;
+  grid-template-rows: max-content minmax(35px,max-content) auto;
   grid-template-areas: 
     ". header ."
     ". nav ."
@@ -110,6 +111,11 @@ body>.header{
 	padding: 5px 15px;
 
   width: 95%;
+}
+body>.header .name{
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 1em;
 }
 
 body>.nav{
@@ -402,20 +408,24 @@ body>.nav{
   .projects-gallery{
     grid-template-columns: 100%;
   }
-  body>.main{
+  body>.header .name{
+    /*font-size: 24px;*/
+    font-size: 3em;
+  }
+  body>.main, .resume-row{
     /*font-size: 12px;*/
-    font-size: 5em;
+    font-size: 1em;
   }
   body>.nav, .resume-row .resume-col-header{
     /*font-size: 16px;*/
-    font-size: 5.20em;
+    font-size: 1.2em;
   }
   .content-text-box .header, 
   .content-box .header,
   .list-item .header,
   .publication-item .header{
     /*font-size: 14px;*/
-    font-size: 5.10em;
+    font-size: 1.1em;
   }
 }
 @media only screen and (max-device-width: 768px) {
@@ -423,20 +433,24 @@ body>.nav{
   .projects-gallery{
     grid-template-columns: 100%;
   }
-  body>.main{
+  body>.header .name{
+    /*font-size: 24px;*/
+    font-size: 3em;
+  }
+  body>.main, .resume-row{
     /*font-size: 12px;*/
-    font-size: 5em;
+    font-size: 1em;
   }
   body>.nav, .resume-row .resume-col-header{
     /*font-size: 16px;*/
-    font-size: 5.20em;
+    font-size: 1.2em;
   }
   .content-text-box .header, 
   .content-box .header,
   .list-item .header,
   .publication-item .header{
     /*font-size: 14px;*/
-    font-size: 5.10em;
+    font-size: 1.1em;
   }
 }
 
@@ -445,7 +459,7 @@ body>.nav{
 <body >
 	
 	<div class="header">
-        <h3 class="">Maeda F. Hanafi</h3>
+        <div class="name">Maeda F. Hanafi</div>
         <p class="content-text">Abu Dhabi, UAE // New York City, NY, USA // New Haven, CT, USA</p>
         <!--<p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>-->
         <p class="content-text">maeda.hanafi@nyu.edu // maeda.han@gmail.com</p>
