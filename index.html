@@ -171,7 +171,6 @@ body>.nav{
 .projects-gallery{
   display:grid;
   grid-template-columns: 50% 50%;
-  /*width:100%;*/
   grid-column-gap: 15px;
 }
 .content-box{
@@ -398,7 +397,15 @@ body>.nav{
     background: lightgray;
     opacity: 0.2;
 }
-
+/*********************************************************************************/
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .projects-gallery{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 15px;
+  }
+}
 
 </style>
 
