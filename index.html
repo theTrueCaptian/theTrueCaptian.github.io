@@ -68,6 +68,23 @@ a{
 
 .button{
   border: none;
+  border: 0px solid white;
+  border-bottom-width: 5px;
+  
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 5px;
+  margin: 0px 5px;  
+
+}
+.clicked, .button:hover{
+    border: 0px solid #3c3c3c;
+    border-bottom-width: 5px;
+
+}
+
+/*.button{
+  border: none;
   border: 1px solid #eee;
   border-right-width: 0.5px;
   border-left-width: 0.5px;
@@ -83,7 +100,7 @@ a{
     background-color: #3c3c3c;
     color: white;
 
-}
+}*/
 
 #dynamic-content{
 	/*overflow-y: scroll;
@@ -115,7 +132,7 @@ body>.nav{
 	grid-area: nav;
 	padding: 5px 15px;
 
-  border-bottom: 1px solid #eee;
+  /*border-bottom: 1px solid #eee;*/
 
 	display: flex;
   width: 95%; 
@@ -130,9 +147,9 @@ body>.main{
 body>.nav, .resume-row .resume-col-header{
 	font-size: 16px;
 	font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: #333;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #333;
 }
 
 /********************************************************************************/
