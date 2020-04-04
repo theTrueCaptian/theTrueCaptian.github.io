@@ -32,6 +32,9 @@ h4{
     margin-top:0px;
     margin-bottom:0px;
 }
+h3{
+  font-weight: 700;
+}
 /* Allow for properly indented content in lists. */
 ol{
     list-style: disc outside none;
@@ -69,38 +72,19 @@ a{
 .button{
   border: none;
   border: 0px solid white;
-  border-bottom-width: 5px;
+  border-bottom-width: 2pt;
   
   height: fit-content;
   width: fit-content;
-  padding: 5px 5px;
+  padding: 5px 0px;
   margin: 0px 10px;  
 
 }
 .clicked, .button:hover{
-    border: 0px solid #3c3c3c;
-    border-bottom-width: 5px;
+  border: 0px solid #3c3c3c;
+  border-bottom-width: 2pt;
 
 }
-
-/*.button{
-  border: none;
-  border: 1px solid #eee;
-  border-right-width: 0.5px;
-  border-left-width: 0.5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
-  height: fit-content;
-  width: fit-content;
-  padding: 5px 5px;
-
-}
-.clicked, .button:hover{
-    background-color: #3c3c3c;
-    color: white;
-
-}*/
 
 #dynamic-content{
 	/*overflow-y: scroll;
@@ -147,9 +131,14 @@ body>.main{
 body>.nav, .resume-row .resume-col-header{
 	font-size: 16px;
 	font-family: inherit;
-  font-weight: 700;
   line-height: 1.1;
   color: #333;
+}
+body>.nav{
+  font-weight: 500;
+}
+.resume-row .resume-col-header{
+  font-weight: 700;
 }
 
 /********************************************************************************/
@@ -166,11 +155,11 @@ body>.nav, .resume-row .resume-col-header{
         "resume-col-header"
         "resume-col-content";
 
-    border-bottom: 1px solid #eee;	
+    border-top: 1px solid #eee;	
 }
 .resume-row .resume-col-header{
 	padding-bottom: 10px;
-	  text-decoration: underline;
+	  /*text-decoration: underline;*/
 
 }
 .resume-row .resume-col-content{
@@ -182,8 +171,8 @@ body>.nav, .resume-row .resume-col-header{
 .projects-gallery{
   display:grid;
   grid-template-columns: 50% 50%;
-  width:100%;
-  grid-column-gap: 30px;
+  /*width:100%;*/
+  grid-column-gap: 15px;
 }
 .content-box{
   display:grid;
