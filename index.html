@@ -63,27 +63,32 @@ a{
 .thumbnail{
     border: none;
     margin:0px;
+    background-color: whitesmoke;
 }
 
 .button{
-    border: none;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+  border: none;
+  border: 1px solid #eee;
+  border-right-width: 0.5px;
+  border-left-width: 0.5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 
-    height: fit-content;
-    margin: 5px 10px;
-    padding: 3px 5px;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 5px;
 
 }
 .clicked, .button:hover{
     background-color: #3c3c3c;
     color: white;
+
 }
 
 #dynamic-content{
-	overflow-y: scroll;
+	/*overflow-y: scroll;
 	height: 100%;
-	overflow-x: hidden;
+	overflow-x: hidden;*/
 	margin-right: 5px;
 	width:95%;
 }
@@ -91,38 +96,29 @@ a{
 body {
   display: grid;
   height: 100%;
-  overflow: hidden;
-  grid-template-columns: minmax(5%,30px) minmax(150px,200px) auto 5%;
-  grid-template-rows: 150px auto;
+  /*overflow: hidden;*/
+  grid-template-columns: minmax(5%,30px) minmax(500px, auto) 5%;
+  grid-template-rows: minmax(120px,auto) minmax(35px, auto) auto;
   grid-template-areas: 
-    ". profile header ."
-    ". nav main ."
+    ". header ."
+    ". nav ."
+    ". main ."
 }
-
-body>.profile{
-	grid-area: profile;
-	padding: 15px;
-	margin:auto;
-}
-
 body>.header{
 	grid-area: header;
-	padding: 15px;
+	padding: 5px 15px;
 
-    width: 95%;
-	border-bottom: 1px solid #ccc;
-
-	margin-top: auto;
-    margin-bottom: auto;
-
+  width: 95%;
 }
 
 body>.nav{
 	grid-area: nav;
-	padding: 15px;
+	padding: 5px 15px;
 
-	margin-top: 5px;
-    margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+
+	display: flex;
+  width: 95%; 
 }
 body>.main{
 	grid-area: main;
@@ -157,6 +153,8 @@ body>.nav, .resume-row .resume-col-header{
 }
 .resume-row .resume-col-header{
 	padding-bottom: 10px;
+	  text-decoration: underline;
+
 }
 .resume-row .resume-col-content{
    padding-left: 15px;
@@ -173,8 +171,8 @@ body>.nav, .resume-row .resume-col-header{
 .content-box{
   display:grid;
   grid-template-columns: 40% auto auto;
-  /*grid-column-gap: 10px;*/
-  grid-template-rows: minmax(0, min-content) minmax(0, min-content) auto;
+  grid-column-gap: 10px;
+  grid-template-rows: minmax(0, min-content) minmax(0, min-content) minmax(0, min-content);
   grid-template-areas: 
      "thumbnail header header"
      "thumbnail date date"
@@ -185,14 +183,25 @@ body>.nav, .resume-row .resume-col-header{
 
   font-size: 12px;
   margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5% 5%;
+  
+  border: 0.5px #eaeaea solid;
+  background-color: whitesmoke;
+  border-radius: 3px;
+
 }
 .content-box .header{
   grid-area:header;
-  font-size: 14px
+  font-size: 14px;
+  border-bottom: 2px #a0a0a0 solid;
+  padding-bottom: 5px;
 }
 .content-box .date{
   grid-area:date;
   text-align:left;
+  padding-top: 5px;
 
 }
 .content-box .location{
@@ -210,7 +219,7 @@ body>.nav, .resume-row .resume-col-header{
   grid-area:links;
 }
 .content-box .thumbnail img {
-  border: 3pt whitesmoke solid;
+  border: 1pt #a5a5a5 solid;
   border-radius: 0.5pt;
 }
 
@@ -388,19 +397,17 @@ body>.nav, .resume-row .resume-col-header{
 </style>
 
 <body >
-	<div class="profile">
-    	<img src="img/maeda.jpg" style="height:100%; border-radius: 10px;"></img>
-	</div>
+	
 	<div class="header">
         <h3 class="">Maeda F. Hanafi</h3>
         <p class="content-text">Abu Dhabi, UAE // New York City, NY, USA // New Haven, CT, USA</p>
-        <p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>
+        <!--<p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>-->
         <p class="content-text">maeda.hanafi@nyu.edu // maeda.han@gmail.com</p>
     </div>
     <div class="nav">
     	<div class="button" onclick="setPage('partial/projects.html',0)">Projects</div>
     	<div class="button" onclick="setPage('partial/cv.html',1)">Curriculum Vitae</div>
-    	<div class="button" onclick="window.open('pdf/MaedaHanafiResumeFeb2020.pdf','_blank')">Resume Download</div>
+    	<div class="button" onclick="window.open('pdf/MaedaHanafiResumeApr2020-SE.pdf','_blank')">Resume Download</div>
     	<div class="button" onclick="setPage('partial/hobbies.html',3)">Misc.</div>
         
 	</div>
