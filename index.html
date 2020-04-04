@@ -87,14 +87,6 @@ a{
 
 }
 
-#dynamic-content{
-	/*overflow-y: scroll;
-	height: 100%;
-	overflow-x: hidden;*/
-	margin-right: 5px;
-	width:95%;
-}
-
 body {
   display: grid;
   height: 100%;
@@ -132,6 +124,9 @@ body>.main{
 	padding: 15px;
 
 	font-size: 12px;
+
+  margin-right: 5px;
+  width:95%;
 }
 
 body>.nav, .resume-row .resume-col-header{
@@ -256,7 +251,7 @@ body>.nav{
     grid-template-rows: auto auto auto auto;
     grid-template-areas: 
         "header date"
-        "location location"
+        "location date"
         "description description"
         "links links"
     ;
