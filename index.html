@@ -144,18 +144,19 @@ body>.nav{
 /********************************************************************************/
 
 .resume-row{
-    width:100%; 
-    padding: 10px;
-    font-size: 12px;
+  width:100%; 
+  padding: 10px;
 
-    display: grid; 
-    grid-template-rows : auto auto;
-    grid-template-columns: auto;
-    grid-template-areas: 
-        "resume-col-header"
-        "resume-col-content";
+  font-size: 12px;
 
-    border-top: 1px solid #eee;	
+  display: grid; 
+  grid-template-rows : auto auto;
+  grid-template-columns: auto;
+  grid-template-areas: 
+      "resume-col-header"
+      "resume-col-content";
+
+  border-top: 1px solid #eee;	
 }
 .resume-row .resume-col-header{
 	padding-bottom: 10px;
@@ -187,6 +188,7 @@ body>.nav{
   ;*/
 
   font-size: 12px;
+
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -305,7 +307,6 @@ body>.nav{
     grid-template-columns: 100%;
     grid-auto-flow: row;
     padding-bottom: 15px;
-    /*font-size: 14px;*/
 }
 .list .list-item{
 }
@@ -357,7 +358,6 @@ body>.nav{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     padding-bottom: 15px;
-    /*font-size: 14px;*/
 }
 .gallery .art-item{
     padding-bottom: 7px;
@@ -366,7 +366,6 @@ body>.nav{
     grid-template-rows: 50% 50%;
 }
 .art-item .header,.art-item .links{
-    /*font-size: 14px;*/
     margin: auto;
     opacity: 0;
     color:black;
@@ -403,11 +402,41 @@ body>.nav{
   .projects-gallery{
     grid-template-columns: 100%;
   }
+  body>.main{
+    /*font-size: 12px;*/
+    font-size: 1em;
+  }
+  body>.nav, .resume-row .resume-col-header{
+    /*font-size: 16px;*/
+    font-size: 1.20em;
+  }
+  .content-text-box .header, 
+  .content-box .header,
+  .list-item .header,
+  .publication-item .header{
+    /*font-size: 14px;*/
+    font-size: 1.10em;
+  }
 }
 @media only screen and (max-device-width: 768px) {
   /* For mobile phones: */
   .projects-gallery{
     grid-template-columns: 100%;
+  }
+  body>.main{
+    /*font-size: 12px;*/
+    font-size: 1em;
+  }
+  body>.nav, .resume-row .resume-col-header{
+    /*font-size: 16px;*/
+    font-size: 1.20em;
+  }
+  .content-text-box .header, 
+  .content-box .header,
+  .list-item .header,
+  .publication-item .header{
+    /*font-size: 14px;*/
+    font-size: 1.10em;
   }
 }
 
