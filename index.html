@@ -93,12 +93,16 @@ body {
 
   font-size: 1.2em;
 }
+body>.header,
+body>.nav,
+body>.main{
+  width: 95%;
 
+}
 body>.header{
 	grid-area: header;
 	padding: 5px 15px;
 
-  width: 95%;
 }
 body>.header .name{
   font-size: 3em;
@@ -112,7 +116,6 @@ body>.nav{
 
   /*border-bottom: 1px solid #eee;*/
   display: flex;
-  width: 95%; 
 }
 body>.main{
 	grid-area: main;
@@ -121,7 +124,6 @@ body>.main{
   font-size: 1em;
 
   margin-right: 5px;
-  width:95%;
 }
 
 body>.nav, .resume-row .resume-col-header{
@@ -133,10 +135,7 @@ body>.nav{
   font-size: 1.1em;
   font-weight: 500;
 }
-.resume-row .resume-col-header{
-  font-size: 1.5em;
-  font-weight: 700;
-}
+
 
 /********************************************************************************/
 .profile-box{
@@ -169,12 +168,15 @@ body>.nav{
 }
 .resume-row .resume-col-header{
 	padding-bottom: 10px;
-	  /*text-decoration: underline;*/
+	/*text-decoration: underline;*/
+  font-size: 1.5em;
+  font-weight: 700;
 
 }
 .resume-row .resume-col-content{
    padding-left: 15px;
 }
+
 /*********************************************************************************/
 /* content-box --> this means its a project with a thumbnail*/
 
