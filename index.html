@@ -409,7 +409,7 @@ body>.nav{
 }
 /*********************************************************************************/
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+  /* For smaller browsers: */
   .projects-gallery{
     grid-template-columns: 100%;
   }
@@ -453,26 +453,28 @@ body>.nav{
   }
 
   body>.header .name{
-    font-size: calc(3em+1vw);
+    font-size: 6em;
+  }
+  body>.nav{
+    font-size: 2.2em;
   }
   body,
   .content-box .header,
   .content-text-box .header {
-    font-size: 1.2em;
+    font-size: 2.4em;
+  }
+  .resume-row .resume-col-header{
+    font-size: 3em;
   }
   body>.main,
   .resume-row,
   .content-box,
   .list-item .header,
   .publication-item .header{
-    font-size: 1em;
+    font-size: 2em;
   }
-  body>.nav{
-    font-size: 1.1em;
-  }
-  .resume-row .resume-col-header{
-    font-size: 1.5em;
-  }
+  
+  
 }
 
 </style>
