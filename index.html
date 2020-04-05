@@ -28,13 +28,6 @@
 
 
 /********************************************************************************/
-/*h4{
-    margin-top:0px;
-    margin-bottom:0px;
-}*/
-/*h3{
-  font-weight: 700;
-}*/
 
 /* Allow for properly indented content in lists. */
 ol{
@@ -98,7 +91,6 @@ body {
     ". nav ."
     ". main .";
 
-  /*font-size: 14px;*/
   font-size: 1.2em;
 }
 body>.header{
@@ -108,7 +100,6 @@ body>.header{
   width: 95%;
 }
 body>.header .name{
-  /*font-size: 24px;*/
   font-size: 3em;
   font-weight: 700;
   margin-top: 1em;
@@ -126,7 +117,6 @@ body>.main{
 	grid-area: main;
 	padding: 15px;
 
-	/*font-size: 12px;*/
   font-size: 1em;
 
   margin-right: 5px;
@@ -139,23 +129,32 @@ body>.nav, .resume-row .resume-col-header{
   color: #333;
 }
 body>.nav{
-  /*font-size: 13px;*/
   font-size: 1.1em;
   font-weight: 500;
 }
 .resume-row .resume-col-header{
-  /*font-size: 16px;*/
   font-size: 1.5em;
   font-weight: 700;
 }
 
+/********************************************************************************/
+.profile-box{
+  color:black; 
+  display:grid; 
+  grid-template-columns: auto auto;
+}
+.profile-box > .thumbnail{
+  padding: 10px;
+}
+.profile-box > .description{
+  padding: 10px;
+}
 /********************************************************************************/
 
 .resume-row{
   width:100%; 
   padding: 10px;
 
-  /*font-size: 12px;*/
   font-size: 1em;
 
   display: grid; 
@@ -176,7 +175,7 @@ body>.nav{
    padding-left: 15px;
 }
 /*********************************************************************************/
-/* content- --> this means its a project with a thumbnail*/
+/* content-box --> this means its a project with a thumbnail*/
 
 .projects-gallery{
   display:grid;
@@ -196,7 +195,6 @@ body>.nav{
      "thumbnail description description"
   ;*/
 
-  /*font-size: 12px;*/
   font-size: 1em;
 
   margin-right: 10px;
@@ -211,7 +209,6 @@ body>.nav{
 }
 .content-box .header{
   grid-area:header;
-  /*font-size: 14px;*/
   font-size: 1.2em;
   border-bottom: 2px #a0a0a0 solid;
   padding-bottom: 5px;
@@ -271,7 +268,6 @@ body>.nav{
 }
 .content-text-box .header{
   color:black;
-  /*font-size: 14px;*/
   font-size: 1.2em;
 }
 .content-text-box .location{
@@ -335,7 +331,6 @@ body>.nav{
 .list-item .header,
 .publication-item .header{
   color:black;
-  /*font-size: 12px;*/
   font-size: 1em;
 }
 .list-item .description, .list-item .date, .list-item .location,
@@ -415,35 +410,22 @@ body>.nav{
   .projects-gallery{
     grid-template-columns: 100%;
   }
-  /*body>.header .name{
-    /*font-size: 24px;*/
-    /*font-size: 3em;
+  .content-text-box{ 
+    width:minmax(100%,300px);
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "header"
+        "location"
+        "date"
+        "description"
+        "links"
+    ;
   }
-  body>.main, .resume-row{
-    /*font-size: 12px;*/
-    /*font-size: 1em;
+  .content-text-box .date{
+    grid-area:date;
+    text-align:left;
   }
-  body>.nav{
-    /*font-size: 13px;*/
-    /*font-size: 1.1em;
-    font-weight: 500;
-  }
-  .resume-row .resume-col-header{
-    /*font-size: 16px;*/
-    /*font-size: 1.5em;
-    font-weight: 700;
-  }
-  .content-text-box .header, 
-  .content-box .header{
-    /*font-size: 14px;*/
-    /*font-size: 1.6em;
-  }
-
-  .list-item .header,
-  .publication-item .header{
-    /*font-size: 12px;*/
-    /*font-size: 1em;
-  }*/
 }
 @media only screen and (max-device-width: 768px) {
   /* For mobile phones: */
