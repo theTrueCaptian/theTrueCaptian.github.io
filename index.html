@@ -93,6 +93,7 @@ body {
 
   font-size: 1.2em;
 }
+
 body>.header{
 	grid-area: header;
 	padding: 5px 15px;
@@ -143,7 +144,7 @@ body>.nav{
   display:grid; 
   grid-template-columns: auto auto;
 }
-.profile-box > .thumbnail{
+.profile-box .thumbnail{
   padding: 10px;
   background-color: white;
 }
@@ -151,7 +152,6 @@ body>.nav{
   padding: 10px;
 }
 /********************************************************************************/
-
 .resume-row{
   width:100%; 
   padding: 10px;
@@ -208,6 +208,7 @@ body>.nav{
   border-radius: 3px;
 
 }
+
 .content-box .header{
   grid-area:header;
   font-size: 1.2em;
@@ -356,6 +357,7 @@ body>.nav{
 }
 
 
+
 /**********************************************************/
 /* gallery --> contains art-item
    art-item contains
@@ -433,29 +435,44 @@ body>.nav{
   .projects-gallery{
     grid-template-columns: 100%;
   }
-  /*body>.header .name{
-    /*font-size: 24px;*/
-    /*font-size: 3em;
+  .content-text-box{ 
+    width:minmax(100%,300px);
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "header"
+        "location"
+        "date"
+        "description"
+        "links"
+    ;
   }
-  body>.main, .resume-row{
-    /*font-size: 12px;*/
-    /*font-size: 1.5em;
-  }
-  body>.nav, .resume-row .resume-col-header{
-    /*font-size: 16px;*/
-    /*font-size: 1.7em;
-  }
-  .content-text-box .header, 
-  .content-box .header{
-    /*font-size: 14px;*/
-    /*font-size: 1.6em;
+  .content-text-box .date{
+    grid-area:date;
+    text-align:left;
   }
 
+  body>.header .name{
+    font-size: calc(3em+1vw);
+  }
+  body,
+  .content-box .header,
+  .content-text-box .header {
+    font-size: 1.2em;
+  }
+  body>.main,
+  .resume-row,
+  .content-box,
   .list-item .header,
   .publication-item .header{
-    /*font-size: 12px;*/
-    /*font-size: 1em;
-  }*/
+    font-size: 1em;
+  }
+  body>.nav{
+    font-size: 1.1em;
+  }
+  .resume-row .resume-col-header{
+    font-size: 1.5em;
+  }
 }
 
 </style>
