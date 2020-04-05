@@ -150,6 +150,10 @@ body>.nav{
 .profile-box > .description{
   padding: 10px;
 }
+.profile-box .thumbnail img{
+    height: 100px;
+    border-radius: 10px;
+  }
 /********************************************************************************/
 .resume-row{
   width:100%; 
@@ -174,7 +178,7 @@ body>.nav{
 
 }
 .resume-row .resume-col-content{
-   padding-left: 15px;
+  padding-left: 1.5em;
 }
 
 /*********************************************************************************/
@@ -207,7 +211,8 @@ body>.nav{
   
   border: 0.5px #eaeaea solid;
   background-color: whitesmoke;
-  border-radius: 3px;
+  border-radius: 0.5em;
+
 
 }
 
@@ -326,7 +331,7 @@ body>.nav{
 }
 
 .tabbed{
-    padding-left: 15px;
+    padding-left: 1.5em;
 }
 .list .list-item,
 .list .publication-item{
@@ -434,8 +439,18 @@ body>.nav{
 }
 @media only screen and (max-device-width: 768px) {
   /* For mobile phones: */
+  .profile-box .thumbnail img{
+    height: 200px;
+  }
   .projects-gallery{
     grid-template-columns: 100%;
+  }
+  .content-box{
+    grid-column-gap: 1em;
+    margin-right: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1.5em;
   }
   .content-text-box{ 
     width:100%;
@@ -448,39 +463,64 @@ body>.nav{
         "description"
         "links"
     ;
+    padding-bottom: 1em;
   }
   .content-text-box .date{
     grid-area:date;
     text-align:left;
   }
+  .button{
+    padding: 0.1em 0px;
+    margin: 0px 0.5em;
+  }
+  .clicked, .button:hover {
+    border-bottom-width: 0.2em;
+  }
+  body{
+    display: grid;
+    grid-template-columns: 5% 90% 5%; 
+    grid-template-rows: max-content max-content auto;
+  }
   body>.header,
   body>.nav,
   body>.main{
-    width: 95%;
+    width: 100%;
   }
-
+  body>.header{
+    font-size: 1.2em;
+    padding: 1em 1em;
+  }
   body>.header .name{
-    font-size: 6em;
+    font-size: 4em;
+    margin-top: 0em;
   }
   body>.nav{
-    font-size: 2.2em;
+    font-size: 1.75em;
   }
   body,
   .content-box .header,
   .content-text-box .header {
-    font-size: 2.4em;
+    font-size: 1.5em;
   }
   .resume-row .resume-col-header{
-    font-size: 3em;
+    font-size: 1.75em;
+    padding-bottom: 1em;
+  }
+  .resume-row{
+    padding: 1em;
   }
   body>.main,
   .resume-row,
   .content-box,
   .list-item .header,
   .publication-item .header{
-    font-size: 2em;
+    font-size: 1.2em;
   }
   
+  .list .list-item, 
+  .list .publication-item {
+    padding-bottom: 1em;
+  }
   
 }
 
