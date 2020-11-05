@@ -27,9 +27,5 @@ function setPage(link, index){
 
 
 
-$(document).ready(function(){
-    setPage("partial/projects.html",0);
-    //setPage("partial/cv.html",1);
-});
 
 

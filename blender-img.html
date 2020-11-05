@@ -17,7 +17,13 @@
 	<script src="js/library/lodash.js"></script>	
 
 	<!-- Main controller files -->
-    <script src='js/controller/page_controller.js'></script>
+	<script src="js/controller/page_controller.js"></script>	
+   <script>
+		$(document).ready(function(){
+			setPage('partial/hobbies.html',4);
+			//setPage("partial/cv.html",1);
+		});
+	</script>
 
 	<style>
 	    
@@ -527,14 +533,6 @@ body>.nav{
 
 </style>
 
-
-<script>
-$(document).ready(function(){
-    setPage("partial/projects.html",0);
-    //setPage("partial/cv.html",1);
-});
-
-</script>
 <body >
 	
 	<div class="header">
@@ -548,7 +546,7 @@ $(document).ready(function(){
       <div class="button" onclick="setPage('partial/writing.html',1)">Writing</div>
     	<div class="button" onclick="setPage('partial/cv.html',2)">CV</div>
     	<div class="button" onclick="window.open('pdf/MaedaHanafiResumeSpet2020-DA.pdf','_blank')">PDF Resume</div>
-    	<!--<div class="button" onclick="setPage('partial/hobbies.html',4)">Misc.</div>-->
+    	<div class="button" onclick="setPage('partial/hobbies.html',4)">Misc.</div>
         
 	</div>
 	<div id="dynamic-content" class="main"></div>
