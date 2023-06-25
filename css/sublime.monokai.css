@@ -378,7 +378,7 @@ a{
     text-align:left;
   }
   .button{
-    padding: 0.1rem 0px;
+    padding: 2rem 0.75rem 0.75rem;
     margin: 0px 0.5rem;
   }
   .clicked, .button:hover {
