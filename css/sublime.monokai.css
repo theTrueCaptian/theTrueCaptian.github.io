@@ -1,4 +1,16 @@
+@font-face {
+  font-family: IBMPlexMono;
+  src: url(IBM_Plex_Mono/IBMPlexMono-Regular.ttf);
+}
+@font-face {
+  font-family: IBMPlexMonoBold;
+  src: url(IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
+}
 
+html{
+  font-family: IBMPlexMono;
+
+}
 body {
   display: grid;
   height: 100%;
@@ -13,7 +25,6 @@ body {
   font-size: 1.2rem;
   line-height:2rem;
   background-color:#232420 ;
-  font-family: IBM Plex Mono;
 
 }
 body>.header,
@@ -30,7 +41,8 @@ body>.header{
 body>.header .name{
   font-size: 3rem;
   line-height: 4rem;
-  font-weight: 700;
+  font-family: IBMPlexMonoBold;
+  /*font-weight: 700;*/
   /*margin-top: 1em;*/
   color: #eb296c;
 }
@@ -97,7 +109,7 @@ p{
 .resume-row .resume-col-header{
 	line-height: 2.5rem;
   font-size: 2rem;
-  font-weight: 700;
+  font-family: IBMPlexMonoBold;
 
 }
 .resume-row .resume-col-content{
