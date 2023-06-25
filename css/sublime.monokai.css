@@ -384,16 +384,20 @@ a{
   .clicked, .button:hover {
     border-bottom-width: 0.2rem;
   }
+  html{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
   body{
     display: grid;
     grid-template-columns: 5% 90% 5%;
     grid-template-rows: max-content max-content auto;
-    font-size: 30px
   }
   body>.header,
   body>.nav,
   body>.main{
     width: 100%;
+    padding:0rem;
   }
   body>.header{
     /*font-size: 1.2em;
