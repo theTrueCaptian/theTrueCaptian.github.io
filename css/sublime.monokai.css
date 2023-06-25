@@ -1,10 +1,10 @@
 @font-face {
   font-family: IBMPlexMono;
-  src: url(./IBM_Plex_Mono/IBMPlexMono-Regular.ttf);
+  src: url(./IBMPlexMono-Regular.ttf);
 }
 @font-face {
   font-family: IBMPlexMonoBold;
-  src: url(./IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
+  src: url(./IBMPlexMono-SemiBold.ttf);
 }
 
 html{
@@ -25,6 +25,7 @@ body {
   font-size: 1.2rem;
   line-height:2rem;
   background-color:#232420 ;
+  font-family: IBMPlexMono;
 
 }
 body>.header,
