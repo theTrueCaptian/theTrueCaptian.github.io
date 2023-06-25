@@ -11,6 +11,7 @@ body {
     ". main .";
 
   font-size: 1.2em;
+  line-height:2rem;
   background-color:#232420 ;
   font-family: IBM Plex Mono;
 
@@ -27,7 +28,8 @@ body>.header{
 
 }
 body>.header .name{
-  font-size: 3em;
+  font-size: 3rem;
+  line-height: 4rem;
   font-weight: 700;
   margin-top: 1em;
   color: #eb296c;
@@ -51,7 +53,8 @@ body>.main{
 
 body>.nav, .resume-row .resume-col-header{
 	font-family: inherit;
-  line-height: 1.1;
+  line-height: 2.5rem;
+  font-size: 2rem;
   color: #eb296c;
 }
 body>.nav{
@@ -96,7 +99,8 @@ p{
 .resume-row .resume-col-header{
 	padding-bottom: 10px;
 	/*text-decoration: underline;*/
-  font-size: 1.5em;
+  line-height: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
 
 }
@@ -165,17 +169,18 @@ p{
 .content-box .header,
 .content-text-box .header{
 	color:#a3d83e;
-	font-size: 16px;
+	font-size: 1.5rem;
+  line-height: 2.2rem;
 }
 .content-box .location,
 .content-text-box .location{
 	color:#e2da78;
-	font-size: 14px;
+	font-size: 1.2rem
 }
 .content-box .date, .content-box .thumbnail,
 .content-text-box .date{
 	color:#a486df;
-	font-size: 14px;
+	font-size: 1.2rem
 }
 .content-box .description, .content-text-box .description{
   color:#ffffff;
@@ -234,7 +239,7 @@ p{
 	grid-template-columns: 100%;
 	grid-auto-flow: row;
 	padding-bottom: 15px;
-	font-size: 14px;
+	font-size: 1.2rem
 }
 .list .list-item{
 
@@ -254,7 +259,7 @@ p{
 .list-item .header,
 .publication-item .header{
 	color:#a3d83e;
-	font-size: 14px;
+	font-size: 1.2rem
 }
 .list-item .title{
   color: #a3d83e;
@@ -303,7 +308,7 @@ a{
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
 	padding-bottom: 15px;
-	font-size: 14px;
+	font-size: 1.2rem
 }
 .gallery .art-item{
 	padding-bottom: 7px;
@@ -312,7 +317,7 @@ a{
 	grid-template-rows: 50% 50%;
 }
 .art-item .header,.art-item .links{
-	font-size: 14px;
+	font-size: 1.2rem
 	margin: auto;
 	opacity: 0;
 	color:black;
@@ -421,7 +426,8 @@ a{
     padding: 1em 1em;
   }
   body>.header .name{
-    font-size: 4em;
+    font-size: 3rem;
+    line-height: 4rem;
     margin-top: 0em;
   }
   body>.nav{
@@ -433,7 +439,8 @@ a{
     font-size: 1.5em;
   }
   .resume-row .resume-col-header{
-    font-size: 1.75em;
+    line-height: 2.5rem;
+    font-size: 2rem;
     padding-bottom: 1em;
   }
   .resume-row{
