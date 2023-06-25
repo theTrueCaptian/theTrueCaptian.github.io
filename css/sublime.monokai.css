@@ -74,6 +74,7 @@ ol{
 p{
 	margin:0px;
 	color: #ffffff;
+	padding: 0.25rem 0.125rem 0.125rem
 }
 .page{
 	width:70%;
@@ -83,7 +84,8 @@ p{
 
 .resume-row{
   width:100%;
-  padding: 10px;
+  padding: 2rem 0.75rem 0.75rem;
+
 
   font-size: 1em;
 
@@ -153,8 +155,8 @@ p{
 	display: grid;
 	grid-gap: 0px 5px;
 
-	grid-template-columns: 80% 20%;
-	grid-template-rows: auto auto auto auto;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto auto auto auto;
 	grid-template-areas:
 		"header date"
 		"location location"
@@ -164,7 +166,7 @@ p{
 }
 .content-box,
 .content-text-box{
-	padding-bottom: 15px;
+	padding: 2rem 0.75rem 0.75rem;
 }
 .content-box .header,
 .content-text-box .header{
@@ -250,11 +252,11 @@ p{
 
 .tabbed{
 	/*padding-top: 7px;*/
-	padding-left: 15px;
+	padding-left: 1.5rem;
 }
 .list .list-item,
 .list .publication-item{
-	padding-bottom: 7px;
+	padding: 2rem 0.75rem 0.75rem;
 }
 .list-item .header,
 .publication-item .header{
@@ -311,7 +313,7 @@ a{
 	font-size: 1.2rem
 }
 .gallery .art-item{
-	padding-bottom: 7px;
+	padding: 2rem 0.75rem 0.75rem;
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: 50% 50%;
@@ -398,7 +400,6 @@ a{
         "description"
         "links"
     ;
-    padding-bottom: 1em;
   }
   .content-text-box .date{
     grid-area:date;
@@ -431,12 +432,10 @@ a{
     margin-top: 0em;
   }
   body>.nav{
-    font-size: 1.75em;
   }
   body,
   .content-box .header,
   .content-text-box .header {
-    font-size: 1.5em;
   }
   .resume-row .resume-col-header{
     line-height: 2.5rem;
@@ -444,7 +443,7 @@ a{
     padding-bottom: 1em;
   }
   .resume-row{
-    padding: 1em;
+      padding: 2rem 0.75rem 0.75rem;
   }
   body>.main,
   .resume-row,
