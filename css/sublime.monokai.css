@@ -10,7 +10,7 @@ body {
     ". nav ."
     ". main .";
 
-  font-size: 1.2em;
+  font-size: 1.2rem;
   line-height:2rem;
   background-color:#232420 ;
   font-family: IBM Plex Mono;
@@ -31,24 +31,23 @@ body>.header .name{
   font-size: 3rem;
   line-height: 4rem;
   font-weight: 700;
-  margin-top: 1em;
+  /*margin-top: 1em;*/
   color: #eb296c;
 }
 
 body>.nav{
 	grid-area: nav;
-	padding: 5px 5px;
+	padding: 2rem 0.75rem 0.75rem;
 
   /*border-bottom: 1px solid #eee;*/
   display: flex;
 }
 body>.main{
 	grid-area: main;
-	padding: 15px;
+	padding: 4rem;
 
-  font-size: 1em;
+  font-size: 1.2rem;
 
-  margin-right: 5px;
 }
 
 body>.nav, .resume-row .resume-col-header{
@@ -58,7 +57,7 @@ body>.nav, .resume-row .resume-col-header{
   color: #eb296c;
 }
 body>.nav{
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -86,9 +85,6 @@ p{
   width:100%;
   padding: 2rem 0.75rem 0.75rem;
 
-
-  font-size: 1em;
-
   display: grid;
   grid-template-rows : auto auto;
   grid-template-columns: auto;
@@ -99,15 +95,13 @@ p{
   border-top: 1px solid #eee;
 }
 .resume-row .resume-col-header{
-	padding-bottom: 10px;
-	/*text-decoration: underline;*/
-  line-height: 2.5rem;
+	line-height: 2.5rem;
   font-size: 2rem;
   font-weight: 700;
 
 }
 .resume-row .resume-col-content{
-  padding-left: 1.5em;
+  padding-left: 1.5rem;
 }
 
 
@@ -132,7 +126,7 @@ p{
 										--- description
 	*/
 	display: grid;
-	grid-gap: 0px 5px;
+	grid-gap: 0px 0.25rem;
 
 	grid-template-columns: 20% 60% 20%;
 	grid-template-rows: auto auto auto auto;
@@ -153,7 +147,7 @@ p{
 		links
 	*/
 	display: grid;
-	grid-gap: 0px 5px;
+	/*grid-gap: 0.75rem;*/
 
   grid-template-columns: 60% 40%;
   grid-template-rows: auto auto auto auto;
@@ -240,7 +234,7 @@ p{
 	display: grid;
 	grid-template-columns: 100%;
 	grid-auto-flow: row;
-	padding-bottom: 15px;
+	/*padding-bottom: 15px;*/
 	font-size: 1.2rem
 }
 .list .list-item{
@@ -309,7 +303,7 @@ a{
 .gallery{
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
-	padding-bottom: 15px;
+	/*padding-bottom: 15px;*/
 	font-size: 1.2rem
 }
 .gallery .art-item{
@@ -406,11 +400,11 @@ a{
     text-align:left;
   }
   .button{
-    padding: 0.1em 0px;
-    margin: 0px 0.5em;
+    padding: 0.1rem 0px;
+    margin: 0px 0.5rem;
   }
   .clicked, .button:hover {
-    border-bottom-width: 0.2em;
+    border-bottom-width: 0.2rem;
   }
   body{
     display: grid;
