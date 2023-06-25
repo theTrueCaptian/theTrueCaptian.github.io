@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/productionContainer.css" />
 	<link rel="styleSheet" href="css/ui-grid-unstable.css"/>
     <link href="css/opentip.css" rel="stylesheet" type="text/css" />    <!-- fancy tooktips: opentips-->
+	<!--<link rel="stylesheet" type="text/css" href="css/simple.css"/>-->
+	<link rel="stylesheet" type="text/css" href="css/sublime.monokai.css"/>
 
 	<!-- SPELLS -->
 	<script src='js/library/jquery-2.1.0.min.js'></script>
@@ -37,275 +39,6 @@
 </head>
 
 <style>
-h4{
-	margin-top:0px;
-}
-/* Allow for properly indented content in lists. */
-ol{
-	list-style: disc outside none;
-	padding-left:20px;
-}
-p{
-	margin:0px;
-}
-.page{
-	width:65%;  
-	margin:auto; 
-}
-
-.resume-row{
-	width:100%; 
-    border: 0;
-    border-top: 1px solid #eee;
-
-	display: grid; 
-	grid-gap: 0px 0px;
-	grid-template-columns: 15% 85%;
-	grid-template-rows: auto;
-	grid-template-areas: 
-		"resume-col-header resume-col-content";
-}
-.resume-row .resume-col-header{
-
-	grid-area: resume-col-header;
-	padding: 15px;
-}
-.resume-row .resume-col-content{
-	grid-area: resume-col-content;
-	padding: 15px;
-}
-.resume-button{
-	float:right;
-	background-color: #3c3c3c;
-    border: none;
-    color: white;
-    height: 40px;
-    padding: 10px;
-}
-.thumbnail{
-	border: none;
-}
-/***********************************************************************************************************************************/
-/* content- --> this means its a project, presentation, paper, item, etc.*/
-.content-box{ 
-	/* 
-		a box contains 
-		Thumbnail (code,report,links) 	--- header  --  date
-										--- location
-										--- description
-	*/
-	display: grid; 
-	grid-gap: 0px 5px;
-
-	grid-template-columns: 20% 60% 20%;
-	grid-template-rows: auto auto auto auto;
-	grid-template-areas: 
-		"header header date"
-		"thumbnail location location"
-		"thumbnail description description"
-		"thumbnail links links"
-	;
-}
-/* content-text-box --> same as above just without thumbnail */
-.content-text-box{ 
-	/* 
-		a content-text-box contains 
-		header  --  date
-		location
-		description
-		links
-	*/
-	display: grid; 
-	grid-gap: 0px 5px;
-
-	grid-template-columns: 80% 20%;
-	grid-template-rows: auto auto auto auto;
-	grid-template-areas: 
-		"header date"
-		"location location"
-		"description description"
-		"links links"
-	;
-}
-.content-box,
-.content-text-box{
-	padding-bottom: 15px;	
-}
-.content-box .header, 
-.content-text-box .header{
-	color:black;
-	font-size: 16px;
-}
-.content-box .location, 
-.content-text-box .location{
-	color:black;
-	font-size: 14px;
-}
-.content-box .date, .content-box .thumbnail, .content-box .description, .content-box .links,
-.content-text-box .date, .content-text-box .description, .content-text-box .links{
-	color:gray;
-	font-size: 14px;
-}
-.content-box .header, 
-.content-text-box .header{
-  	grid-area: header;
-}
-.content-box .date,
-.content-text-box .date{
-	grid-area: date;
-	text-align: right;
-}
-.content-box .location,
-.content-text-box .location{
-	grid-area: location;
-}
-.content-box .thumbnail{
-	grid-area: thumbnail;
-}
-.content-box .thumbnail img{
-	border: 1pt gray solid;
-    border-radius: 0.5pt;
-}
-.content-box .description,
-.content-text-box .description{
-	grid-area: description;
-}
-.content-box .links,
-.content-text-box .links{
-	grid-area: links;
-}
-
-/***********************************************************************************************************************************/
-/* list --> this contains a compact ist of list-items and publication-items
-   list-items contains 
-   	- a header within the item with darker font
-   	- a description with gray font
-   	- date
-   	- location
-   	- links
-	
-   publication-items contains
-    - a header within the item with darker font
-	- title with gray font
-    - date
-    - location
-    - links
-
-*/
-.list{
-	display: grid;
-	grid-template-columns: 100%;
-	grid-auto-flow: row;
-	padding-bottom: 15px;
-	font-size: 14px;
-}
-.list .list-item{
-	/*display: grid;
-	grid-template-areas: 
-		"header description location date links"
-	;
-	grid-template-rows: auto;*/
-	/*grid-auto-flow: column;*/
-}
-.list .publication-item{
-	/*display: grid;
-	grid-template-areas: 
-		"header title location date" 
-		"links . . ."
-	;*/
-}
-
-.tabbed{
-	/*padding-top: 7px;*/
-	padding-left: 15px;
-}
-.list .list-item,
-.list .publication-item{
-	padding-bottom: 7px;
-}
-.list-item .header,
-.publication-item .header{
-	color:black;
-	font-size: 14px;
-}
-.list-item .description, .list-item .date, .list-item .location,
-.publication-item .title, .publication-item .date, .publication-item .location{
-	color:gray;
-}
-
-.list-item .description{
-	grid-area: description;
-}
-.list-item .date,
-.publication-item .date{
-	grid-area: date;
-}
-.list-item .location,
-.publication-item .location{
-	grid-area: location;
-}
-.list-item .links, 
-.publication-item .links{
-	grid-area: links;
-}
-
-a{
-	color:gray;
-	font-weight:normal;
-	text-decoration: underline;
-}
-/***********************************************************************************************************************************/
-/* gallery --> contains art-item
-   art-item contains
-   - header 
-   - image
-   - link
-*/
-.gallery{
-	display: grid;
-	grid-template-columns: 33% 33% 33%;
-	padding-bottom: 15px;
-	font-size: 14px;
-}
-.gallery .art-item{
-	padding-bottom: 7px;
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: 50% 50%;
-}
-.art-item .header,.art-item .links{
-	font-size: 14px;
-	margin: auto;
-	opacity: 0;
-	color:black;
-	z-index: 100;
-}
-.art-item .header{
-	grid-row: 1 / span 1;
-	grid-column: 1;
-}
-.art-item .links{
-	grid-row-start: 2;
-	grid-column: 1;
-}
-.art-item .thumbnail{
-	grid-row-start: 1;
-	grid-column: 1;
-}
-
-.art-item:hover{
-	background: lightgray;
-}
-.art-item:hover .header, .art-item:hover .links{
-	opacity: 100;
-	color:black;
-	z-index: 100;
-}
-.art-item:hover .thumbnail{
-	background: lightgray;
-	opacity: 0.2;
-}
-
 
 </style>
 
@@ -361,10 +94,10 @@ a{
 				        		</span>
         						<span class="location">NYUAD Annual Research Conference 2017.</span>
 				        		<span class="date">Fall 2017.</span>
-				        		<!-- To uncomment when work published<span class="links">
+				        		<span class="links">
 				        			<a href="http://maedahanafi.info/pdf/KBAnalysis2017NYUADDraft2.pdf">Poster.</a>
 				        			<a href="https://bitbucket.org/maedah/flowfix/src/master/">Code.</a>
-				        		</span> -->
+				        		</span>
 			        		</div>
 			        		<div class="publication-item">
 			        			<span class="header">Seminar and Poster Presentation.</span>
@@ -373,11 +106,11 @@ a{
 				        		</span>
         						<span class="location">IBM Research Almaden, San Jose, California.</span>
 				        		<span class="date">Sept. 2017.</span>
-				        		<!-- To uncomment when work published<span class="links">
+				        		<span class="links">
 				        			<a href="http://maedahanafi.info/pdf/KBAnalysis2017FinalIBM.pptx">Slides.</a> 
 				        			<a href="http://maedahanafi.info/pdf/KBAnalysisPosterPresentation.pdf">Poster.</a> 
 				        			<a href="http://maedahanafi.info/pdf/OneMinuteMadnessPres2017.pptx">One Minute Presentation.</a>
-				        		</span> -->
+				        		</span>
 			        		</div>
 			        	</div>
         				
