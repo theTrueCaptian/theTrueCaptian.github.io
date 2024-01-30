@@ -9,30 +9,30 @@
 
 html{
   font-family: IBMPlexMono;
-
+  color: #ffffff;
 }
 body {
   display: grid;
   height: 100%;
   /*overflow: hidden;*/
   grid-template-columns: minmax(5%,30px) minmax(500px, auto) 5%;
-  grid-template-rows: max-content minmax(35px,max-content) auto;
+  grid-template-rows: minmax(8%,max-content) max-content auto;
   grid-template-areas:
-    ". header ."
     ". nav ."
+    ". header ."
     ". main .";
 
   font-size: 1.2rem;
   line-height:2rem;
-  background-color:#232420 ;
+  background-color: #2f302b;
   font-family: IBMPlexMono;
-
 }
 body>.header,
-body>.nav,
 body>.main{
   width: 95%;
-
+}
+body>.nav{
+  width: 100%;
 }
 body>.header{
 	grid-area: header;
@@ -50,29 +50,37 @@ body>.header .name{
 
 body>.nav{
 	grid-area: nav;
-	padding: 2rem 0.75rem 0.75rem;
+  margin: 0rem 0rem 0rem 0rem;
 
-  /*border-bottom: 1px solid #eee;*/
+  border-bottom: 1px solid #a9aaa5;
+
   display: flex;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #a9aaa5;
+  height: fit-content;
+  background: #2f302b;
+
+  /* For sticky header effect*/
+  position: fixed;
+  top: 0;
+  width: 100%
 }
+
 body>.main{
 	grid-area: main;
-	padding: 4rem;
 
   font-size: 1.2rem;
 
 }
 
-body>.nav, .resume-row .resume-col-header{
+.resume-row .resume-col-header{
 	font-family: inherit;
   line-height: 2.5rem;
   font-size: 2rem;
   color: #eb296c;
 }
-body>.nav{
-  font-size: 1.1rem;
-  font-weight: 500;
-}
+
 
 
 h4{
@@ -92,12 +100,32 @@ p{
 	width:70%;
 	margin:auto;
 }
+
+
+.highlight{
+  color: #a3d83e
+}
+.location{
+  color:#e2da78;
+}
+/*************** Buttons ******************************************************************/
+
+.button{
+  padding: 0.5rem 1rem;
+  height:fit-content;
+  width: fit-content;
+  background-color:#2f302b;
+}
+.clicked, .button:hover {
+  border-bottom: 0.2rem solid #a9aaa5;
+  cursor: pointer;
+}
 /*********************************************************************************/
 
 .resume-row{
   width:100%;
-  padding: 2rem 0.75rem 0.75rem;
-
+  padding: 1rem;
+  margin: 2rem 0.75rem 0.75rem;
   display: grid;
   grid-template-rows : auto auto;
   grid-template-columns: auto;
@@ -105,7 +133,10 @@ p{
       "resume-col-header"
       "resume-col-content";
 
-  border-top: 1px solid #eee;
+  /*border-top: 1px solid #a9aaa5;*/
+  background-color: #232420;
+  border: 0.1rem solid #a9aaa5;
+  border-radius: 1rem;
 }
 .resume-row .resume-col-header{
 	line-height: 2.5rem;
@@ -114,7 +145,6 @@ p{
 
 }
 .resume-row .resume-col-content{
-  padding-left: 1.5rem;
 }
 
 
@@ -367,13 +397,7 @@ a{
   .projects-gallery{
     grid-template-columns: 100%;
   }
-  .content-box{
-    /*grid-column-gap: 1em;
-    margin-right: 0.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 1.5em;*/
-  }
+
   .content-text-box{
     width:100%;
     grid-template-columns: 100%;
@@ -390,62 +414,114 @@ a{
     grid-area:date;
     text-align:left;
   }
-  .button{
-    padding: 2rem 0.75rem 0.75rem;
-    margin: 0px 0.5rem;
-  }
-  .clicked, .button:hover {
-    border-bottom-width: 0.2rem;
-  }
+
   html{
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
   }
   body{
     display: grid;
-    grid-template-columns: 5% 90% 5%;
-    grid-template-rows: max-content max-content auto;
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: minmax(4rem,max-content) max-content auto;
+    grid-template-areas:
+      ". nav ."
+      ". header ."
+      ". main .";
+
+
   }
   body>.header,
   body>.nav,
   body>.main{
     width: 100%;
+   /* max-width: 700px;*/
     padding:0rem;
-  }
-  body>.header{
-    /*font-size: 1.2em;
-    padding: 1em 1em;*/
-  }
-  body>.header .name{
-    /*font-size: 3rem;
-    line-height: 4rem;
-    margin-top: 0em;*/
-  }
-  body>.nav{
-  }
-  body,
-  .content-box .header,
-  .content-text-box .header {
-  }
-  .resume-row .resume-col-header{
-    /*line-height: 2.5rem;
-    font-size: 2rem;
-    padding-bottom: 1em;*/
-  }
-  .resume-row{
-      /*padding: 2rem 0.75rem 0.75rem;*/
-  }
-  body>.main,
-  .resume-row,
-  .content-box,
-  .list-item .header,
-  .publication-item .header{
-    /*font-size: 1.2em;*/
+    margin: 0rem;
   }
 
-  .list .list-item,
-  .list .publication-item {
-    /*padding-bottom: 1em;*/
+  body>.nav{
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+}
+
+/*********************************************************************************/
+@media only screen and (max-device-width: 770px) {
+  /* For mobile phones: */
+  .profile-box .thumbnail img{
+    height: 200px;
+  }
+  .projects-gallery{
+    grid-template-columns: 100%;
+  }
+
+  .content-text-box{
+    width:100%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "header"
+        "location"
+        "date"
+        "description"
+        "links"
+    ;
+  }
+  .content-text-box .date{
+    grid-area:date;
+    text-align:left;
+  }
+
+  html{
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  body{
+    display: grid;
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: minmax(4rem,max-content) max-content auto;
+    grid-template-areas:
+      ". nav ."
+      ". header ."
+      ". main .";
+
+  }
+  body .name {
+    padding-left: 1.5rem
+  }
+
+  .header > .tabbed > .content-text{
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+  }
+
+  body>.header,
+  body>.nav,
+  body>.main{
+    width: 100%;
+    /*max-width: 700px;*/
+    padding:0rem;
+    margin: 0rem;
+  }
+
+  /* Sticky header */
+  body>.nav{
+    position: fixed;
+    top: -1;
+    width: 100%
+  }
+
+}
+
+@media only screen and (max-device-width: 380px) {
+  body>.header,
+  body>.nav,
+  body>.main{
+    width: 100%;
+    padding:0rem;
+    margin: 0rem;
   }
 
 }

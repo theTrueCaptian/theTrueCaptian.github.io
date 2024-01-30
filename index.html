@@ -20,20 +20,12 @@
 
 	<title> Maeda F. Hanafi </title>
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"><!-- load bootstrap -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
-	<link rel="stylesheet" type="text/css" href="css/productionContainer.css" />
-	<link rel="styleSheet" href="css/ui-grid-unstable.css"/>
-    <link href="css/opentip.css" rel="stylesheet" type="text/css" />    <!-- fancy tooktips: opentips-->
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<!--<link rel="stylesheet" type="text/css" href="css/simple.css"/>-->
 	<link rel="stylesheet" type="text/css" href="css/sublime.monokai.css"/>
 
 	<!-- SPELLS -->
 	<script src='js/library/jquery-2.1.0.min.js'></script>
 	
-	<!-- Other important js -->
-	<script src="js/library/lodash.js"></script>	
 
 	<!-- Main controller files -->
     <script src='js/controller/page_controller.js'></script>
@@ -49,8 +41,7 @@
 
 <script>
 $(document).ready(function(){
-    //setPage("partial/projects.html",0);
-    setPage("partial/cv.html",2);
+    setPage("partial/aboutme.html",0);
 });
 
 </script>
@@ -71,7 +62,8 @@ $(document).ready(function(){
 		</div>
 	</div>
     <div class="nav">
-    	<!--<div class="button" onclick="setPage('partial/projects.html',0)">Projects</div>-->
+		<div class="button" onclick="setPage('partial/aboutme.html',0)">About Me</div>
+    	<div class="button" onclick="setPage('partial/research.html',1)">Research</div>
       <!--<div class="button" onclick="setPage('partial/writing.html',1)">Writing</div>-->
     	<div class="button" onclick="setPage('partial/cv.html',2)">CV</div>
     	<!--<div class="button" onclick="window.open('pdf/MaedaHanafiResumeSpet2020-DA.pdf','_blank')">PDF Resume</div>-->
