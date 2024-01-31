@@ -22,8 +22,8 @@ body {
     ". header ."
     ". main .";
 
-  font-size: 1rem;
-  line-height:1.5rem;
+  font-size: 1em;
+  line-height:1.5em;
   background-color: #2f302b;
   font-family: IBMPlexMono;
 }
@@ -106,6 +106,9 @@ p{
 }
 .location{
   color:#e2da78;
+}
+.paragraph{
+  padding: 1rem 0rem 1rem 0rem;
 }
 /*************** Buttons ******************************************************************/
 
