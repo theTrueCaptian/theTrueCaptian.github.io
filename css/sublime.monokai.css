@@ -111,7 +111,7 @@ p{
 /*************** Buttons ******************************************************************/
 
 .button{
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   height:fit-content;
   width: fit-content;
   background-color:#2f302b;
@@ -483,8 +483,9 @@ a{
   }
   body{
     display: grid;
+    row-gap: 2em;
     grid-template-columns: 1% 98% 1%;
-    grid-template-rows: minmax(4rem,max-content) max-content auto;
+    grid-template-rows: minmax(5rem,max-content) max-content auto;
     grid-template-areas:
       ". nav ."
       ". header ."
@@ -512,13 +513,14 @@ a{
   /* Sticky header */
   body>.nav{
     position: fixed;
-    top: -1;
+    top: 0;
     width: 100%;
   }
 
   body>.header{
     margin: 1rem 0rem 1rem 0rem;
   }
+
 
 }
 
@@ -541,4 +543,11 @@ a{
     margin: 1rem 0rem 1rem 0rem;
   }
 
+  .button{
+    padding: 1rem 2.5rem;
+  }
+  .clicked, .button:hover {
+    border-bottom: 0.5rem solid #a9aaa5;
+    cursor: pointer;
+  }
 }
