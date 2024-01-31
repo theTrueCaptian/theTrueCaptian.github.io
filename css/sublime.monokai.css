@@ -443,6 +443,9 @@ a{
     position: fixed;
     top: 0;
     width: 100%
+
+    font-size: 3rem;
+    line-height: 3.2rem;
   }
 
 }
@@ -475,8 +478,8 @@ a{
   }
 
   html{
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 0.7rem;
+    line-height: 0.9rem;
   }
   body{
     display: grid;
@@ -493,7 +496,7 @@ a{
   }
 
   .header > .tabbed > .content-text{
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     line-height: 0.7rem;
   }
 
