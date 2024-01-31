@@ -43,8 +43,6 @@ body>.header .name{
   font-size: 2rem;
   line-height: 3rem;
   font-family: IBMPlexMonoBold;
-  /*font-weight: 700;*/
-  /*margin-top: 1em;*/
   color: #eb296c;
 }
 
@@ -481,8 +479,7 @@ a{
   }
 
   html{
-    font-size: 0.7rem;
-    line-height: 0.9rem;
+
   }
   body{
     display: grid;
@@ -499,8 +496,8 @@ a{
   }
 
   .header > .tabbed > .content-text{
-    font-size: 0.7rem;
-    line-height: 0.7rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
   }
 
   body>.header,
